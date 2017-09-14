@@ -1,0 +1,74 @@
+/**storepick.wxss**/
+.pagemain {
+  background: #faf8f8; }
+  .pagemain .loc {
+    height: 92rpx;
+    background: #faf8f8;
+    color: #ff5669;
+    font-size: 32rpx;
+    padding: 0px 30rpx; }
+  .pagemain .store_line {
+    background: #fff;
+    border-bottom: 1rpx solid #dddddd; }
+    .pagemain .store_line:last-child {
+      border-bottom: none; }
+    .pagemain .store_line .in_store {
+      padding-top: 46rpx;
+      padding-bottom: 20rpx; }
+  .pagemain .first {
+    margin: 0px 40rpx;
+    margin-bottom: 30rpx; }
+    .pagemain .first .des {
+      font-size: 38rpx;
+      color: #333333;
+      font-weight: 600;
+      min-height: 60rpx;
+      word-break: break-all; }
+  .pagemain .no_first {
+    margin-left: 30rpx;
+    margin-bottom: 20rpx; }
+    .pagemain .no_first .des {
+      font-size: 28rpx;
+      color: #666666; }
+  .pagemain .store_icon {
+    margin-left: 60rpx;
+    margin-right: 30rpx; }
+  .pagemain .notice_fade {
+    transition: background-color 0.4s,transform 0.2s;
+    transform: scale(0, 0);
+    background-color: transparent;
+    position: fixed;
+    top: 0px; }
+    .pagemain .notice_fade.now {
+      transform: scale(1, 1);
+      background-color: rgba(0, 0, 0, 0.6); }
+    .pagemain .notice_fade .pannel {
+      background: #fff;
+      border-radius: 4px 4px 0px 0px; }
+    .pagemain .notice_fade .mode_window {
+      margin: 0px 45px;
+      background: #fff;
+      text-align: center;
+      border-radius: 4px;
+      overflow: hidden; }
+      .pagemain .notice_fade .mode_window .top {
+        padding: 26px 15px; }
+        .pagemain .notice_fade .mode_window .top .t {
+          font-size: 16px;
+          color: #333333;
+          margin-bottom: 12rpx; }
+        .pagemain .notice_fade .mode_window .top .des {
+          word-break: break-all;
+          margin-top: 5px;
+          font-size: 12px;
+          color: #666666;
+          text-align: start; }
+      .pagemain .notice_fade .mode_window .bot {
+        border-top: 1rpx solid #e6e6e6;
+        font-size: 14px;
+        height: 44px; }
+        .pagemain .notice_fade .mode_window .bot .cancel {
+          color: #333333; }
+        .pagemain .notice_fade .mode_window .bot .confirm {
+          color: #fff;
+          background: #ffc430; }

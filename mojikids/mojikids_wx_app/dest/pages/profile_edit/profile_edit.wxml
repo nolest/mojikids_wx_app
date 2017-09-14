@@ -1,0 +1,45 @@
+<!--pages/profile_edit/profile_edit.wxml-->
+<view class="ds-flex flex-v pagemain">
+    <view class="profile-edit-page" id="profile-edit-page" v-cloak>
+        <view class="item-wrap">
+            <view class="img-item">
+            
+                <view class="user" id="upload-btn"  bindtap="fetch_upload"  style="background-image: url({{mr_img}});">
+                    <view class="ui-avatar-icon ui-avatar-icon-l" style="background-image: url({{user_img}});"> </view>
+                    <i class="icon-photo"></i>
+                </view>
+
+                <image src="{{upload_img_loading}}"  style="display:none" bindload="imageOnLoad"  binderror="imageOnLoadError" />
+
+
+
+                <view class="txt f14 color-aaa tc">
+                    点击修改头像
+                </view>
+
+            </view>
+            <view class="txt-item">
+                <view class="item ui-border-b">
+                    <view class="title f14 color-333">用户ID</view>
+                    <view class="info-con">
+                        <input type="text" disabled="false" class="ui-title-info color-ccc f14"  value="{{user_id}}" readonly />
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="title f14 color-333">用户昵称</view>
+                    <view class="info-con">
+                        <input  bindinput="bindKeyInput" type="text" class="ui-title-info color-666 f14" placeholder="请输入用户昵称"  value="{{user_name}}"  />
+                    </view>
+                </view>
+            </view>
+            <view class="btn-item">
+                <view class="ui-button ui-button-block ui-button-100per ui-button-size-xl main-bg ui-button-radius-l" bindtap="save_profile">
+                    <span class="ui-button-content f16">保存</span>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+

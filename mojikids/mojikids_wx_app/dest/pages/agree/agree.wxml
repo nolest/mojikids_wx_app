@@ -1,0 +1,15 @@
+<!--pages/agree/agree.wxml-->
+<import src="../../utils/wxParse/wxParse.wxml" />
+<view class="ds-flex flex-v pagemain">
+    <view class="index-page">
+        <view>
+            <template is="wxParse" data="{{wxParseData:txt_val.nodes}}" />
+        </view>
+
+        <view class="foot_img {{img_show}}"  ><image  src="http://image19.yueus.com/yueyue/20170522/20170522113054_161267_100001_37970.jpg?586x238_120"></image>
+        </view>
+
+
+
+    </view>
+</view>

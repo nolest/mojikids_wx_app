@@ -1,0 +1,66 @@
+/**index.wxss**/
+.pagemain .mine_top {
+  height: 80rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  padding: 30rpx; }
+  .pagemain .mine_top .name {
+    font-weight: 600;
+    color: #333333;
+    font-size: 28rpx;
+    margin-bottom: 8rpx; }
+  .pagemain .mine_top .phone {
+    color: #999999;
+    font-size: 24rpx; }
+  .pagemain .mine_top .prepay {
+    width: 80rpx;
+    height: 32rpx;
+    background: -webkit-linear-gradient(top, #ffc430 0%, #ffae2c 100%);
+    font-size: 20rpx;
+    color: #fff;
+    border-radius: 16rpx;
+    margin-top: 4rpx;
+    margin-left: 12rpx; }
+
+.pagemain .baby_card .card_title {
+  margin-top: 26rpx;
+  margin-bottom: 20rpx;
+  color: #666666; }
+
+.pagemain .baby_card .sw .tap_card:first-child {
+  margin-left: 40px; }
+
+.pagemain .baby_card .sw .tap_card:last-child {
+  margin-right: 10px; }
+
+.pagemain .baby_card .sw .tap_card .c_ti {
+  font-size: 32rpx;
+  color: #ffc430; }
+
+.pagemain .baby_card .sw .tap_card .real_card {
+  margin-top: 5px;
+  box-shadow: 0px 0px 3px 3px rgba(170, 170, 170, 0.1);
+  border-radius: 4px; }
+  .pagemain .baby_card .sw .tap_card .real_card .con {
+    font-size: 0;
+    margin: 30rpx 0; }
+  .pagemain .baby_card .sw .tap_card .real_card .con_exp {
+    font-size: 0;
+    margin-top: 50rpx;
+    margin-bottom: 30rpx; }
+  .pagemain .baby_card .sw .tap_card .real_card .name {
+    font-size: 32rpx;
+    color: #111111;
+    margin-bottom: 8rpx; }
+  .pagemain .baby_card .sw .tap_card .real_card .bir {
+    font-size: 24rpx;
+    color: #cccccc; }
+
+.pagemain .line {
+  padding: 0px 30rpx;
+  height: 90rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  background: #fff;
+  font-size: 28rpx;
+  color: #666666; }
+  .pagemain .line:last-child {
+    border-bottom: none; }

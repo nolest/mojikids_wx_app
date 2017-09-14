@@ -1,0 +1,201 @@
+.pagemain {
+  background: #faf8f8; }
+  .pagemain .banner {
+    height: 200rpx;
+    background: #ffc430;
+    position: fixed;
+    top: 0px;
+    width: 100%; }
+    .pagemain .banner .left {
+      margin-left: 40rpx; }
+      .pagemain .banner .left .title {
+        color: #fff;
+        font-size: 32rpx;
+        font-weight: 600;
+        margin-bottom: 16rpx; }
+      .pagemain .banner .left .text {
+        font-size: 24rpx;
+        color: #ffe8b0;
+        word-break: break-all; }
+    .pagemain .banner .right {
+      margin: 0 30rpx; }
+  .pagemain .fake_empty {
+    height: 200rpx;
+    width: 100%; }
+  .pagemain .jump_con {
+    background: #fff;
+    margin-bottom: 10px; }
+    .pagemain .jump_con .to_shop {
+      color: #666666;
+      padding: 15px;
+      border-bottom: 1px solid #e6e6e6;
+      font-size: 14px; }
+      .pagemain .jump_con .to_shop .img_con {
+        font-size: 0;
+        width: 15px;
+        margin-right: 10px; }
+      .pagemain .jump_con .to_shop:last-child {
+        border-bottom: none; }
+      .pagemain .jump_con .to_shop .arrows {
+        font-size: 0; }
+  .pagemain .info {
+    margin-bottom: 10px; }
+    .pagemain .info .line {
+      height: 44px;
+      font-size: 14px;
+      color: #333333;
+      padding: 0px 15px;
+      background: #fff;
+      border-bottom: 1px solid #e6e6e6; }
+      .pagemain .info .line .right {
+        color: #666666; }
+      .pagemain .info .line:last-child {
+        border-bottom: none; }
+  .pagemain .info_2 {
+    background: #fdfdfd;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e6e6e6; }
+    .pagemain .info_2 .img_con {
+      font-size: 0; }
+    .pagemain .info_2 .descrip {
+      margin: 0px 10px; }
+      .pagemain .info_2 .descrip .t {
+        color: #4c4c4c;
+        font-size: 14px; }
+      .pagemain .info_2 .descrip .des {
+        margin-top: 15rpx;
+        color: #aaaaaa;
+        font-size: 12px; }
+    .pagemain .info_2 .price {
+      color: #666666;
+      font-size: 14px; }
+  .pagemain .info_3 {
+    background: #fff;
+    margin-bottom: 10px; }
+    .pagemain .info_3 .line {
+      height: 44px;
+      font-size: 14px;
+      padding: 0px 15px;
+      color: #666666;
+      border-bottom: 1px solid #e6e6e6; }
+      .pagemain .info_3 .line:last-child {
+        border-bottom: none; }
+        .pagemain .info_3 .line:last-child .left {
+          color: #333333;
+          font-size: 16px; }
+        .pagemain .info_3 .line:last-child .right {
+          color: #ffc430;
+          font-size: 16px;
+          font-weight: 600; }
+  .pagemain .info_a {
+    background: #fff;
+    margin-bottom: 40rpx;
+    padding: 30rpx;
+    padding-bottom: 12rpx; }
+    .pagemain .info_a .line {
+      font-size: 14px;
+      color: #aaaaaa;
+      margin-bottom: 16rpx; }
+      .pagemain .info_a .line .left {
+        font-size: 28rpx; }
+      .pagemain .info_a .line .right {
+        word-break: break-all;
+        font-size: 28rpx; }
+  .pagemain .empty {
+    height: 50px; }
+  .pagemain .button {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 49px;
+    background: #ffc430;
+    color: #fff;
+    font-size: 32rpx; }
+  .pagemain .info_b {
+    margin-bottom: 10px; }
+    .pagemain .info_b .p_title {
+      padding: 0rpx 30rpx;
+      font-size: 24rpx;
+      height: 44rpx;
+      margin-bottom: 20rpx;
+      color: #333333; }
+    .pagemain .info_b .line {
+      height: 44px;
+      font-size: 14px;
+      color: #333333;
+      padding: 0px 15px;
+      background: #fff;
+      border-bottom: 1px solid #e6e6e6; }
+      .pagemain .info_b .line .right {
+        color: #666666; }
+      .pagemain .info_b .line:last-child {
+        border-bottom: none; }
+  .pagemain .info_c {
+    background: #fff;
+    margin-bottom: 10px; }
+    .pagemain .info_c .to_shop {
+      color: #666666;
+      padding: 15px;
+      font-size: 14px; }
+      .pagemain .info_c .to_shop .img_con {
+        font-size: 0;
+        width: 15px;
+        margin-right: 10px; }
+      .pagemain .info_c .to_shop:last-child {
+        border-bottom: none; }
+      .pagemain .info_c .to_shop .arrows {
+        font-size: 0; }
+
+.payment_fade {
+  transition: background-color 0.4s,transform 0.2s;
+  transform: scale(0, 0);
+  background-color: transparent;
+  position: fixed;
+  top: 0px; }
+  .payment_fade.now {
+    transform: scale(1, 1);
+    background-color: rgba(0, 0, 0, 0.6); }
+  .payment_fade .pannel {
+    background: #fff;
+    border-radius: 4px 4px 0px 0px; }
+  .payment_fade .mode_window {
+    margin: 0px 45px;
+    background: #fff;
+    text-align: center;
+    border-radius: 4px;
+    overflow: hidden; }
+    .payment_fade .mode_window .top {
+      padding: 18px 15px; }
+      .payment_fade .mode_window .top .t {
+        font-size: 16px;
+        color: #333333; }
+      .payment_fade .mode_window .top .des {
+        word-break: break-all;
+        margin-top: 8px;
+        font-size: 14px;
+        color: #666666;
+        text-align: start; }
+    .payment_fade .mode_window .way {
+      padding: 0px 30rpx;
+      min-height: 110rpx;
+      border-top: 1rpx solid #eeeeee; }
+      .payment_fade .mode_window .way .inner_way .icon {
+        margin-right: 20rpx; }
+      .payment_fade .mode_window .way .inner_way .pay_way_title {
+        font-size: 28rpx;
+        color: #666666; }
+      .payment_fade .mode_window .way .inner_way .pay_way_des {
+        font-size: 22rpx;
+        color: #ffc430;
+        margin-top: 10rpx; }
+    .payment_fade .mode_window .bot {
+      font-size: 14px;
+      height: 45px; }
+      .payment_fade .mode_window .bot .cancel {
+        color: #333333; }
+      .payment_fade .mode_window .bot .confirm {
+        font-size: 16px;
+        color: #fff;
+        background: #ffc430; }
+      .payment_fade .mode_window .bot .gray {
+        background: #cccccc; }

@@ -1,0 +1,60 @@
+/* pages/bind/bind.wxss */
+.pagemain {
+  height: 100%;
+  background: #ffffff; }
+  .pagemain .con {
+    margin: 15px 30px 0px 30px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e6e6e6; }
+    .pagemain .con .get_code {
+      color: #ffc430;
+      font-size: 16px;
+      margin: 10px 0px; }
+    .pagemain .con .sec {
+      padding: 10px 0px; }
+  .pagemain .btn {
+    height: 45px;
+    border-radius: 24px;
+    margin: 20px 30px;
+    color: #fff; }
+    .pagemain .btn.normal {
+      background: #cccccc; }
+    .pagemain .btn.cur {
+      background: #ffc430; }
+  .pagemain .confirm_fade {
+    transition: background-color 0.4s,transform 0.2s;
+    transform: scale(0, 0);
+    background-color: transparent;
+    position: fixed;
+    top: 0px;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.6); }
+    .pagemain .confirm_fade.now {
+      transform: scale(1, 1);
+      background-color: rgba(0, 0, 0, 0.6); }
+    .pagemain .confirm_fade .pannel {
+      background: #fff;
+      border-radius: 4px 4px 0px 0px; }
+    .pagemain .confirm_fade .mode_window {
+      margin: 0px 45px;
+      background: #fff;
+      text-align: center;
+      border-radius: 4px;
+      overflow: hidden; }
+      .pagemain .confirm_fade .mode_window .top {
+        padding: 26px 0px; }
+        .pagemain .confirm_fade .mode_window .top .t {
+          font-size: 16px;
+          color: #333333; }
+        .pagemain .confirm_fade .mode_window .top .des {
+          margin-top: 8px;
+          font-size: 14px;
+          color: #666666; }
+      .pagemain .confirm_fade .mode_window .bot {
+        font-size: 14px;
+        height: 44px; }
+        .pagemain .confirm_fade .mode_window .bot .cancel {
+          color: #333333; }
+        .pagemain .confirm_fade .mode_window .bot .confirm {
+          color: #fff;
+          background: #ffc430; }

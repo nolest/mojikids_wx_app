@@ -1,0 +1,24 @@
+page {
+  background: #fff; }
+
+view {
+  line-height: 1.6; }
+
+.index-page {
+  padding: 20rpx 20rpx  3rpx 20rpx;
+  font-size: 28rpx; }
+  .index-page .dn {
+    display: none; }
+  .index-page view {
+    padding-bottom: 20rpx; }
+  .index-page .fb {
+    font-weight: bold; }
+  .index-page .foot_img {
+    width: 586rpx;
+    height: 238rpx;
+    padding: 20rpx 0rpx 0 70rpx; }
+    .index-page .foot_img image {
+      width: 586rpx;
+      height: 238rpx; }
+  .index-page .wxParse-inline {
+    display: inline; }

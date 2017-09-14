@@ -1,0 +1,59 @@
+<!--pages/mine/mine.wxml-->
+<view class="ds-flex flex-v pack-between pagemain">
+  <view class="ds-flex mine_top" bindtap="go_to_edit">
+    <view class="ds-flex align-center">
+      <image src="{{ info.user_info.data.avatar }}" style="width:80rpx;height:80rpx;border-radius:50%;margin-right:20rpx;"></image>
+    </view>
+    <view class="ds-flex flex-v align-center pack-center">
+      <view class="name">{{ info.user_info.data.nickname }}</view>
+      <view class="phone">{{ info.user_info.data.phone }}</view>
+    </view>
+    <view class="ds-flex flex-v pack-center align-center prepay" wx:if="{{ info.user_info.data.is_card_user == '1' }}">储值卡</view>
+  </view>
+  <view class="ds-flex flex-v baby_card">
+    <view class="ds-flex pack-center align-center card_title" bindtap="go_to_bb_list">
+      <view>我的宝宝档案</view>
+      <image src="/image/mine/arrow-icon-32x32.png" style="width:32rpx;height:32rpx"></image>
+    </view>
+    <scroll-view class="sw" scroll-x="true" style="width: 100%;white-space: nowrap;">
+      <block wx:if="{{info.list.length == 0}}">
+        <view class="tap_card" style="display:inline-block;width:{{window.windowWidth-55}}px;height:170px;">
+          <view class="ds-flex flex-v align-center real_card" bindtap="go_to_file" style="width:{{window.windowWidth-80}}px;height:140px;position:relative;">
+            <view class="con_exp">
+              <image src="/image/mine/creat_2_120x120.png" style="width:120rpx;height:120rpx;"></image>
+            </view>
+            <view class="c_ti">为宝宝建立档案</view>
+            <image src="/image/mine/creat_1_120x120.png" style="width:120rpx;height:120rpx;position:absolute;bottom:0;right:30rpx;"></image>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="tap_card" style="display:inline-block;width:{{window.windowWidth-55}}px;height:170px;" wx:for="{{info.list}}" data-id="{{item.baby_id}}" bindtap="go_to_bb">
+          <view class="ds-flex flex-v align-center real_card" style="width:{{window.windowWidth-80}}px;height:140px;position:relative">
+            <view class="con">
+              <image src="{{item.baby_image}}" style="width:120rpx;height:120rpx;border-radius:50%"></image>
+            </view>
+            <view class="name">{{item.baby_name}}</view>
+            <view class="bir">{{item.baby_birth}}</view>
+            <block wx:if="{{item.baby_gender == '1'}}">
+              <image src="/image/mine/male_top_left_64x64.png" style="width:64rpx;height:64rpx;position:absolute;top:10px;left:10px;"></image>
+              <image src="/image/mine/male_bot_right_64x64.png" style="width:64rpx;height:64rpx;position:absolute;bottom:10px;right:10px;"></image>
+            </block>
+            <block wx:else>
+              <image src="/image/mine/female_top_left_64x64.png" style="width:64rpx;height:64rpx;position:absolute;top:10px;left:10px;"></image>
+              <image src="/image/mine/female_bot_right_64x64.png" style="width:64rpx;height:64rpx;position:absolute;bottom:10px;right:10px;"></image>
+            </block>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+
+
+  </view>
+  <view class="ds-flex flex-v pack-center line" wx:for="{{ list }}" bindtap="taps" data-types="{{item.types}}" data-url="{{item.url}}" wx:if="{{ item.show == '1'}}">
+    <view class="ds-flex align-center pack-between">
+      <view>{{ item.name }}</view>
+      <image src="/image/mine/arrow-icon-32x32.png" style="width:32rpx;height:32rpx"></image>
+    </view>
+  </view>
+</view>

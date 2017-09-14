@@ -1,0 +1,143 @@
+/**coupon.wxss**/
+.pagemain{
+  padding: 40rpx 15px;
+  .card{
+    box-shadow:0px 0px 10px 3px rgba(127, 127, 127, 0.1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    min-height: 358rpx;
+    background: #ffb628;
+    color: #d2730c;
+    position: relative;
+    margin-bottom: 40rpx;
+    .img{
+      position: absolute;
+      top: 0;
+      left:0;
+      z-index: 1;
+    }
+    .top{
+      position: relative;
+      top: 0;
+      z-index: 2;
+      .top_left{
+        padding-top: 30rpx;
+        padding-left: 44rpx;
+        .price{
+          color: #fff;
+          font-size: 72rpx;
+        }
+        .des{
+          font-size: 32rpx;
+        }
+      }
+    }
+
+    .bottom{
+      font-size: 24rpx;
+      padding: 30rpx 30rpx 30rpx 30rpx;
+      .inn_des{
+        &:last-child{
+          margin-bottom: 0px;
+        }
+        margin-bottom: 16rpx;
+      }
+      .des_title{
+        min-width: 120rpx;
+        word-break: break-all;
+      }
+      .des_value{
+        word-break: break-all;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+      .in_cur{
+        word-break: break-all;
+      }
+    }
+  }
+  .cut{
+    margin-top: 12rpx;
+    font-size: 28rpx;
+    color: #dddddd;
+    margin-bottom: 40rpx;
+  }
+  .card_for{
+    box-shadow:0px 0px 10px 3px rgba(127, 127, 127, 0.1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    min-height: 358rpx;
+    background: #e8e8e8;
+    color: #bbbbbb;
+    position: relative;
+    margin-bottom: 40rpx;
+    .img{
+      position: absolute;
+      top: 0;
+      left:0;
+      z-index: 1;
+    }
+    .top{
+      position: relative;
+      top: 0;
+      z-index: 2;
+      .top_left{
+        padding-top: 30rpx;
+        padding-left: 44rpx;
+        .price{
+          color: #fff;
+          font-size: 72rpx;
+        }
+        .des{
+          font-size: 32rpx;
+        }
+      }
+    }
+
+    .bottom{
+      font-size: 24rpx;
+      .in_k{
+        padding: 30rpx 0rpx 30rpx 30rpx;
+      }
+      .inn_des{
+        &:last-child{
+          margin-bottom: 0px;
+        }
+        margin-bottom: 16rpx;
+
+      }
+      .des_title{
+        min-width: 120rpx;
+        word-break: break-all;
+      }
+      .des_value{
+        word-break: break-all;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+      .in_cur{
+        word-break: break-all;
+      }
+    }
+  }
+}
+.empty{
+  image{
+    margin-bottom: 26rpx;
+  }
+  .notice{
+    font-size: 32rpx;
+    color: #aaaaaa;
+    margin-bottom: 20px;
+  }
+}

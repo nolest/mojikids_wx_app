@@ -1,0 +1,177 @@
+page{
+  background: #faf8f8;
+}
+.pagemain{
+  background: #faf8f8;
+  .bar{
+    height: 89rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+    background: #fff;
+    color:#999999;
+    font-size: 26rpx;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    .bar_inner{
+      width: 20%;
+      &.cur{
+        color: #ffc430;
+        .tap_item{
+          border-top: 4rpx solid #fff;
+          border-bottom: 4rpx solid #ffc430;
+        }
+      }
+    }
+  }
+  .order_list_inner{
+    .fake_margin{
+      height: 90rpx;
+      width: 100%;
+    }
+    padding:15px 15px 5px 15px;
+    .child{
+      border-radius:20rpx;
+      background:#fff;
+      box-shadow:0px 0px 10px 3px rgba(127,127,127,0.1);
+      margin-bottom:15px;
+      .order_title{
+        margin:12px 15px 0px 15px;
+        padding-bottom:12px;
+        color:#333333;
+        font-size:14px;
+        border-bottom:1rpx solid #e6e6e6;
+      }
+      .order_body{
+        margin:12px 15px 0px 15px;
+        border-bottom:1rpx solid #e6e6e6;
+        padding-bottom: 10rpx;
+        .body_inner{
+          margin-bottom:10px;
+        }
+        .left{
+          font-size : 14px;
+          color:#333333;
+          width:75px;
+        }
+        .right{
+          font-size : 14px;
+          color:#666666;
+        }
+      }
+      .order_price{
+        height:79rpx;
+
+        margin:0rpx 30rpx;
+        border-bottom:1rpx solid #e6e6e6;
+        .left{
+          font-size : 14px;
+          color:#333333;
+        }
+        .right{
+          font-size : 14px;
+          color:#ffc430;
+          font-weight:600;
+        }
+      }
+      .order_pay{
+        height: 110rpx;
+        margin:0rpx 30rpx;
+        .stasus{
+          font-size : 14px;
+          color:#666666;
+        }
+        .btn{
+          font-size:14px;
+          color:#ffc430;
+          border : 1px solid #ffc430;
+          padding: 6px 14px;
+          border-radius : 15px;
+          margin-left: 15px;
+        }
+      }
+    }
+    .empty{
+      image{
+        margin-bottom: 26rpx;
+      }
+      .notice{
+        font-size: 32rpx;
+        color: #aaaaaa;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+.payment_fade{
+  &.now{
+    transform : scale(1,1);
+    background-color:rgba(0,0,0,0.6);
+  }
+  transition:background-color 0.4s,transform 0.2s;
+  transform : scale(0,0);
+  background-color:rgba(0,0,0,0);
+  position:fixed;
+  top:0px;
+  .pannel{
+    background:#fff;
+    border-radius:4px 4px 0px 0px;
+  }
+  .mode_window{
+    margin:0px 45px;
+    background:#fff;
+    text-align:center;
+    border-radius:4px;
+    overflow:hidden;
+    .top{
+      padding:18px 15px;
+      .t{
+        font-size:16px;
+        color:#333333;
+      }
+      .des{
+        word-break: break-all;
+        margin-top:8px;
+        font-size:14px;
+        color:#666666;
+        text-align: start;
+      }
+    }
+    .way{
+      padding: 0px 30rpx;
+      min-height: 110rpx;
+      border-top: 1rpx solid #eeeeee;
+      .inner_way{
+        .icon{
+          margin-right: 20rpx;
+        }
+        .pay_way_title{
+          font-size: 28rpx;
+          color: #666666;
+
+        }
+        .pay_way_des{
+          font-size: 22rpx;
+          color: #ffc430;
+          margin-top: 10rpx;
+        }
+      }
+    }
+    .bot{
+      //border-top:1px solid #e6e6e6;
+      font-size:14px;
+      height:45px;
+      .cancel{
+        color:#333333;
+      }
+      .confirm{
+
+        font-size: 16px;
+        color:#fff;
+        background:#ffc430;
+      }
+      .gray{
+        background: #cccccc;
+      }
+    }
+  }
+}

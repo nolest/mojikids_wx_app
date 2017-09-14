@@ -1,0 +1,27 @@
+page {
+  background: #faf8f8; }
+
+.feedback-page textarea {
+  font-size: 28rpx; }
+
+.feedback-page .p1th .item-wrap .textarea-item {
+  padding: 30rpx;
+  background-color: #fff; }
+  .feedback-page .p1th .item-wrap .textarea-item .feedback-info {
+    width: 100%;
+    min-height: 300rpx; }
+
+.feedback-page .p1th .item-wrap .btn-item {
+  padding: 40rpx 60rpx; }
+
+.feedback-page .btn {
+  padding: 40rpx; }
+  .feedback-page .btn .ui-button {
+    border-radius: 60rpx;
+    line-height: 90rpx;
+    background-color: #ffc430;
+    display: block;
+    text-align: center;
+    color: #fff; }
+  .feedback-page .btn .disabled {
+    background-color: #ccc !important; }

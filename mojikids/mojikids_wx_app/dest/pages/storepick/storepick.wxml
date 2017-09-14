@@ -1,0 +1,38 @@
+<!--pages/storepick/storepick.wxml-->
+<view class="ds-flex flex-v pack-between pagemain">
+  <view class="ds-flex flex-v {{ show_store?'now':'' }} store_fade" style="height:100%;width:{{ window.windowWidth }}px;position:fixed;top:0px;background:#faf8f8;">
+    <view class="ds-flex align-center loc">
+      <view>广州</view>
+    </view>
+    <view class="ds-flex store_line" wx:for="{{store}}" bindtap="choose_store_in_fade" data-storeIndex="{{ index }}" data-scheduleId="{{ item.schedule_id}}" data-storeId="{{item.store_id}}" data-storeNameStr="{{item.property[0].value}}">
+      <view class="ds-flex flex-v flex-1 in_store">
+        <view class="ds-flex {{ idx == '0'?'first':'no_first'}}" wx:for="{{item.property}}" wx:for-index="idx" wx:for-item="iteminner">
+          <view class="font-size:0;padding-top:0px;">
+            <image class="{{ idx == '0'?'fn-hide':''}}" src="{{iteminner.image}}" style="width:30rpx;height:30rpx;margin-right:20rpx;"></image>
+          </view>
+
+          <view class="ds-flex align-start flex-1 des">{{iteminner.value}}</view>
+        </view>
+      </view>
+      <view class="ds-flex pack-center align-center store_icon">
+        <image src="{{index == current_store?'/image/details/store_cur_30x30.png':'/image/details/store_30x30.png'}}" style="width:30rpx;height:30rpx"></image>
+      </view>
+    </view>
+    </view>
+        <view class="ds-flex pack-center align-center notice_fade {{ show_notice_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ window.windowWidth }}px">
+        <view class="ds-flex flex-v pack-between mode_window" style="width:{{ window.windowWidth-90 }}px;">
+            <view class="ds-flex flex-v top">
+                <view class="t">预约须知</view>
+                <view class="des">1、本店服务的小朋友年龄层为<view style="color:#ffc430;display:inline-block;">2-10岁</view></view>
+                <view class="des">2、订单中心可改约拍摄时间，<view style="color:#ffc430;display:inline-block;">限制1次机会</view>，当天拍摄不可修改</view>
+                <view class="des">3、若取消拍摄，至少<view style="color:#ffc430;display:inline-block;">提前3天</view>联系客服</view>
+            </view>
+            <view class="ds-flex bot">
+                <view class="ds-flex pack-center align-center flex-1 cancel" bindtap="notice_cancel_fade">不再提示</view>
+                <view class="ds-flex flex-1" bindtap="notice_confirm">
+                    <view class="ds-flex flex-1 pack-center align-center flex-1 confirm">我知道了</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

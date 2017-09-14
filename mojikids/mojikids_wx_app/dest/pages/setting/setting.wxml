@@ -1,0 +1,33 @@
+<!--pages/setting/setting.wxml-->
+<view class="ds-flex flex-v pagemain">
+
+    <view class="set-up-index-page" >
+        <view class="item-wrap">
+
+            <view class="ui-edit-user-info-mod ui-border-b">
+                <view class="item item-border-bottom-1"   bindtap="go_person">
+                    <view class="user-info-item ">
+                        <view class="lbox ">
+                            <view class="tips color-666 f14">个人资料</view>
+                        </view>
+                        <view class="rbox "> <i class="icon-allow-grey"></i>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="ui-edit-user-info-mod ui-border-b">
+                <view class="item item-border-bottom-1" bindtap="go_change_phone">
+                    <view class="user-info-item ">
+                        <view class="lbox ">
+                            <view class="tips color-666 f14">更换手机号</view>
+                        </view>
+                        <view class="rbox "> <i class="icon-allow-grey"></i>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>

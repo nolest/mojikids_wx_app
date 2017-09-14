@@ -1,0 +1,55 @@
+<!--pages/order_subsets/order_subsets.wxml-->
+<view class="ds-flex flex-v pagemain">
+  <scroll-view class="scroll {{ show_empty?'em' : ''}}" scroll-y="true" style="height:{{window.windowHeight}}px;" bindscrolltolower="bot">
+    <view class="ds-flex flex-v each" wx:for="{{list}}">
+      <view class="con">
+        <image src="/image/order_subsets/top_750x50.png" style="width:{{window.windowWidth}}px;height:{{window.windowWidth/750*50}}px"></image>
+      </view>
+      <view class="body" style="margin:0px {{window.windowWidth/750*36}}px;background:#fff">
+        <view class="ds-flex pack-between xls align-center">
+          <view class="ds-flex flex-1 ">商品名称</view>
+          <view class="ds-flex right">
+            <view class="ds-flex pack-end" style="min-width:120rpx;">数量</view>
+            <view class="ds-flex pack-end" style="margin-left:30rpx;min-width:120rpx;">价格</view>
+          </view>
+        </view>
+        <view class="ds-flex flex-v xls_g">
+          <view class="ds-flex pack-between align-center line" wx:for="{{item.goods}}" wx:for-item="inner" wx:for-index="idx">
+            <view class="ds-flex flex-1 name_clo">{{inner.title}}</view>
+            <view class="ds-flex right">
+              <view class="ds-flex pack-end" style="min-width:120rpx;">{{inner.buy_num}}</view>
+              <view class="ds-flex pack-end" style="margin-left:30rpx;min-width:120rpx;">{{inner.price}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="ds-flex flex-v xls_b">
+          <view class="ds-flex pack-between align-center line" wx:for="{{item.bill}}" wx:for-item="inner" wx:for-index="idx">
+            <view class="ds-flex flex-1 name_clo">{{inner.title}}</view>
+            <view class="ds-flex right">
+              <view class="ds-flex pack-end">{{inner.value}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="ds-flex flex-v xls_t">
+          <view class="ds-flex align-center line" wx:for="{{item.trade}}" wx:for-item="inner" wx:for-index="idx">
+            <view class="ds-flex name_clo">{{inner.title}}</view>
+            <view class="ds-flex flex-1 right">
+              <view class="ds-flex">{{inner.value}}</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+      <view class="ds-flex pack-center" style="font-size:0">
+        <image src="/image/order_subsets/bot_678x8.png" style="width:{{window.windowWidth - window.windowWidth/750*72}}px;height:{{window.windowWidth/750*8}}px"></image>
+      </view>
+    </view>
+    <view class="ds-flex flex-v align-center pack-center empty {{ show_empty?'' : 'fn-hide'}}" style="height:{{ window.windowHeight}}px">
+      <image src="/image/order_list/all_no_200x200.png" style="width:200rpx;height:200rpx"></image>
+      <view class="notice">
+        <view>你还没有相关的订单哦~</view>
+      </view>
+    </view>
+    <view style="height:44rpx"></view>
+  </scroll-view>
+</view>

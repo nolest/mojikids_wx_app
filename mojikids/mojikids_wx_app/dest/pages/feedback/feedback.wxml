@@ -1,0 +1,37 @@
+<view class="ds-flex flex-v pagemain">
+
+    <view class="feedback-page" id="feedback-page">
+        <view class="p1th">
+            <view class="item-wrap">
+
+              
+                    <view class="textarea-item">
+                        <textarea name="textarea" maxlength="-1"  bindinput="bindButtonTap"  class="feedback-info f15 color-666"  placeholder="请写出您对我们的意见或建议，谢谢~\(≧▽≦)/~"></textarea>
+                    </view>
+
+                    <view class="btn">
+                        <view class="{{disabled_css}} ui-button  ui-button-block ui-button-100per ui-button-size-xl ui-button-bg-btn-ccc ui-button-radius-l " bindtap="submit_feedback_info">
+                            <span class="ui-button-content f16">提交</span>
+                        </view>
+                    </view>
+      
+
+            </view>
+        </view>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

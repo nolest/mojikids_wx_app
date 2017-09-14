@@ -1,0 +1,134 @@
+<!--pages/confirm/confirm.wxml-->
+<view class="ds-flex flex-v pagemain">
+  <scroll-view scroll-y="true" style="height: {{window.windowHeight-50}}px;">
+
+    <!--view class="ds-flex flex-v info {{prepaid?'fn-hide':''}}">
+      <view class="ds-flex pack-between align-center line" wx:for="{{info.property}}">
+        <view>{{item.title}}</view>
+        <view>{{item.value}}</view>
+      </view>
+      <view class="ds-flex align-center pack-between line" bindtap="go_to_coupon">
+        <view class="left">优惠券</view>
+        <view class="cou_right" wx:if="{{ info.coupon_list.available.length == 0 }}">无优惠券可用</view>
+        <view class="ds-flex align-center cou_right choosen" wx:elif="{{ coupon_sn }}">
+          {{coupon_name}}
+          <image src="/image/confirm/arrow-icon-22x28.png" style="width:22rpx;height:28rpx"></image>
+        </view>
+        <view class="cou_right" wx:else>未选择</view>
+      </view>
+    </view-->
+
+    <view class="ds-flex flex-v info_f " style="position:relative;">
+      <view class="ds-flex align-center line" wx:for="{{info.property}}" style="font-size:16px;">
+        <view style="margin-right: 10px;">{{item.title}}</view>
+        <view style="color:#666666">{{item.value}}</view>
+      </view>
+      <view class="ds-flex align-center line" style="padding-top:5px;padding-bottom:2px;">
+        <image src="/image/confirm/info_32x32_g2.png" style="width:16px;height:16px"></image>
+        <view style="font-size:12px;color:#cccccc;margin-left:5px;">订单有1次机会更换门店/档期，拍摄当天不可更改</view>
+      </view>
+      <image src="/image/confirm/bg_180x180.png" style="width:90px;height:90px;position:absolute;right:15px;bottom:0px;"></image>
+    </view>
+    <view class="ds-flex info_x" bindtap="go_to_coupon">
+      <view class="ds-flex flex-v flex-1">
+        <view class="ds-flex align-center line" >
+          <view class="left" style="margin-right:8px">优惠券：</view>
+          <view class="ds-flex align-center cou_right choosen" wx:if="{{ !info.coupon_list.available.length }}">无优惠券可用
+            <!--image src="/image/confirm/arrow-icon-22x28.png" style="width:22rpx;height:28rpx"></image-->
+          </view>
+          <view class="ds-flex align-center cou_right choosen" wx:elif="{{ coupon_sn }}">
+            {{coupon_name}}
+            <!--image src="/image/confirm/arrow-icon-22x28.png" style="width:22rpx;height:28rpx"></image-->
+          </view>
+          <view class="ds-flex align-center cou_right choosen" wx:else>有 {{ info.coupon_list.available.length }} 张优惠券可用
+            <!--image src="/image/confirm/arrow-icon-22x28.png" style="width:22rpx;height:28rpx"></image-->
+          </view>
+        </view>
+        <view class="ds-flex align-center another_line {{info.is_card_user == '1'?'':'fn-hide'}}">
+          <image src="/image/confirm/info_32x32_g2.png" style="width:16px;height:16px"></image>
+          <view style="font-size:12px;color:#cccccc;margin-left:5px;">储值卡支付不支持使用优惠券喔~</view>
+        </view>
+      </view>
+      <view class="ds-flex pack-end align-center">
+        <image src="/image/confirm/arrow-icon-22x28.png" style="width:22rpx;height:28rpx"></image>
+      </view>
+    </view>
+
+    <view class="ds-flex pack-between info_2">
+      <view class="ds-flex flex-1">
+        <view class="img_con">
+          <image src="{{info.goods.cover.value}}" style="width:80px;height:80px;" />
+        </view>
+        <view class="ds-flex flex-v flex-1 descrip">
+          <view class="t">{{info.goods.title}}</view>
+          <view class="des">{{info.goods.standard_name}}</view>
+        </view>
+      </view>
+      <view class="ds-flex price">{{info.goods.price}}</view>
+    </view>
+    <view class="ds-flex flex-v info_3">
+      <view class="ds-flex align-center pack-between line" wx:for="{{info.bill}}">
+        <view class="left">{{item.title}}</view>
+        <view class="right">{{item.value}}</view>
+      </view>
+    </view>
+    <view class="ds-flex flex-v info_4">
+      <view class="ds-flex align-center line">
+        <view class="t">预约人：</view>
+        <input class="flex-1" placeholder="请输入你的姓名" type="text" bindinput="bindInput" data-type="username" value="{{info.username}}" placeholder-style="color:#cccccc" />
+      </view>
+      <view class="ds-flex align-center line">
+        <view class="t">宝宝年龄：</view>
+        <input class="flex-1" placeholder="如要填写多个年龄，请用“,”隔开" type="text" bindinput="bindInput" data-type="baby_age" value="{{info.baby_age}}" placeholder-style="color:#cccccc" />
+      </view>
+      <view class="ds-flex align-center line">
+        <view class="t">联系方式：</view>
+        <input class="flex-1" placeholder="请输入正确的联系方式" type="number" bindinput="bindInput" maxlength="11" value="{{info.phone}}" placeholder-style="color:#cccccc" data-type="phone" />
+      </view>
+      <view class="ds-flex align-center line">
+        <view class="t">电子邮箱：</view>
+        <input class="flex-1" placeholder="(选填)请输入您的邮箱地址" type="text" bindinput="bindInput" value="{{info.email}}" placeholder-style="color:#cccccc" data-type="email" />
+      </view>
+    </view>
+    <view class="ds-flex align-center text_a">备注：</view>
+    <input class="text_ab" placeholder="(选填)请填写您对拍摄的一些要求" type="text" placeholder-style="color:#cccccc" bindinput="bindInput" data-type="area" value="{{ info.area }}" placeholder-style="color:#cccccc" />
+  </scroll-view>
+  <view class="ds-flex align-center pack-center next_btn_2" bindtap="submit">{{ next_btn_2 }}</view>
+  <view class="ds-flex pack-center align-center confirm_fade {{ show_confirm_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ windowWidth }}px">
+    <view class="ds-flex flex-v pack-between mode_window" style="width:{{ windowWidth-90 }}px;">
+      <view class="ds-flex flex-v top">
+        <view class="t">{{fade_title}}</view>
+        <view class="des">{{fade_message}}</view>
+      </view>
+      <view class="ds-flex bot">
+        <view class="ds-flex flex-1 pack-center align-center flex-1 confirm" bindtap="cancel_fade">确认</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="ds-flex pack-center align-center payment_fade {{ show_payment_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ window.windowWidth }}px" catchtap="hide_fade">
+  <view class="ds-flex flex-v pack-between mode_window" style="width:{{ window.windowWidth-90 }}px;">
+    <view class="ds-flex flex-v top">
+      <view class="t">选择支付方式</view>
+    </view>
+    <view class="ds-flex flex-v">
+      <view class="ds-flex align-center pack-between way" wx:for="{{ outer_pay_way }}" catchtap="choose_payway" data-payway="{{ item.value }}" data-index="{{ index }}">
+        <view class="ds-flex flex-1 inner_way align-center">
+          <image class="icon" src="{{ item.icon }}" style="width:27px;height:27px"></image>
+          <view class="ds-flex flex-v pack-center">
+            <view class="ds-flex pay_way_title">{{ item.title }}</view>
+            <view class="ds-flex pay_way_des" wx:if="{{ item.description }}">{{ item.description }}</view>
+          </view>
+        </view>
+        <view class="ds-flex pack-center align-center">
+          <image src="{{index == current_payment?'/image/payment/store_cur_30x30.png':'/image/details/store_30x30.png'}}" style="width:30rpx;height:30rpx"></image>
+        </view>
+      </view>
+    </view>
+    <view class="ds-flex bot">
+      <view class="ds-flex flex-1" data-usable="{{ outer_pay_way[current_payment].is_usable }}" catchtap="payment_confirm">
+        <view class="ds-flex flex-1 pack-center align-center flex-1 confirm {{ outer_pay_way[current_payment].is_usable == '1'?'':'gray' }}">确认支付</view>
+      </view>
+    </view>
+  </view>
+</view>

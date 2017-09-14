@@ -1,0 +1,134 @@
+<!--pages/order_detail/order_detail.wxml-->
+<!--import src="../../utils/wxParse/wxParse.wxml" /-->
+<view class="ds-flex flex-v pack-between pagemain">
+  <view class="ds-flex banner pack-between">
+    <view class="ds-flex flex-v flex-1 pack-center left">
+      <view class="title">{{info.status_str}}</view>
+      <view class="text" wx:if="{{info.status == '0'}}">
+        {{info.status_description.start}}
+        <view style="display:inline-block;font-size:24rpx;font-weight:600;color:#fff">{{pay_ms}}</view>{{info.status_description.end}}
+        <!--view wx:if="{{info.status_description.start}}">
+            {{info.status_description.start}}<view style="display:inline-block;font-size:24rpx;font-weight:600;color:#fff">{{pay_ms}}</view>{{info.status_description.end}}
+      </view>
+      <view wx:else>
+            {{info.status_description}}
+      </view-->
+        <!--template is="wxParse" data="{{wxParseData:article.nodes}}" /-->
+      </view>
+      <view class="text" wx:else>{{info.status_description}}</view>
+    </view>
+    <view class="ds-flex align-center right">
+      <image src="{{info.status_icon}}" style="width:168rpx;height:168rpx;"></image>
+    </view>
+  </view>
+  <view class="ds-flex fake_empty"></view>
+  <view class="ds-flex flex-v jump_con">
+    <view class="ds-flex align-center to_shop" wx:for="{{ info.store }}" wx:for-item="inner" wx:for-index="$index" data-position="{{ inner.lng_lat }}" data-value="{{ inner.value }}" data-index="{{ $index }}" bindtap="to_shop">
+      <block wx:if="{{$index==0}}">
+        <view class="ds-flex flex-1" data-storeid="{{ info.store_id }}" bindtap="nav_shop">
+          <view class="ds-flex flex-1 align-center">
+            <view class="img_con">
+              <image src="{{ inner.image }}" style="height:15px;width:15px" />
+            </view>
+            <view class="text">{{ inner.value }}</view>
+          </view>
+          <view class="arrows">
+            <image src="/image/ui/arrow-icon-32x32.png" style="height:16px;width:16px" />
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="ds-flex flex-1 align-center">
+          <view class="img_con">
+            <image src="{{ inner.image }}" style="height:15px;width:15px" />
+          </view>
+          <view class="text">{{ inner.value }}</view>
+        </view>
+        <view class="arrows">
+          <image src="/image/ui/arrow-icon-32x32.png" style="height:16px;width:16px" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="ds-flex flex-v info">
+    <view class="ds-flex pack-between align-center line" wx:for="{{info.property}}">
+      <view>{{item.title}}</view>
+      <view class="right">{{item.value}}</view>
+    </view>
+  </view>
+  <view class="ds-flex pack-between info_2" wx:for="{{info.goods}}">
+    <view class="ds-flex flex-1">
+      <view class="img_con">
+        <image src="{{item.cover}}" style="width:80px;height:80px;" />
+      </view>
+      <view class="ds-flex flex-v flex-1 descrip">
+        <view class="t">{{item.title}}</view>
+        <view class="des">{{item.standard_name}}</view>
+      </view>
+    </view>
+    <view class="ds-flex price">{{item.price}}</view>
+  </view>
+  <view class="ds-flex flex-v info_3">
+    <view class="ds-flex align-center pack-between line" wx:for="{{info.bill}}">
+      <view class="left">{{item.title}}</view>
+      <view class="right">{{item.value}}</view>
+    </view>
+  </view>
+  <view class="ds-flex flex-v info_b" wx:if="{{ info.promo_title }}">
+    <view class="ds-flex align-center p_title">{{info.promo_title}}</view>
+    <view class="ds-flex align-center pack-between line" wx:for="{{info.promo}}">
+      <view class="left">{{item.title}}</view>
+      <view class="right">{{item.value}}</view>
+    </view>
+  </view>
+  <view class="ds-flex flex-v info_c" catchtap="go_to_child">
+    <view class="ds-flex align-center to_shop">
+      <view class="ds-flex flex-1 align-center">
+        子订单记录
+      </view>
+      <view class="arrows">
+        <image src="/image/ui/arrow-icon-32x32.png" style="height:16px;width:16px" />
+      </view>
+    </view>
+    <view class="ds-flex flex-v pack-center align-center" wx:if="{{ info.qrcode }}" style="font-size:0;" data-qr="{{ info.qrcode }}" catchtap="preview">
+      <image src="{{ info.qrcode }}" style="width:250rpx;height:250rpx;padding:30rpx;"></image>
+      <view style="font-size:24rpx;color:#666666">请保存二维码至手机，使用微信扫码识别相册二维码，</view>
+      <view style="font-size:24rpx;color:#666666;margin-top:8rpx;margin-bottom:50rpx;">即可马上了解订单售后进度</view> 
+    </view>
+  </view>
+  <view class="ds-flex flex-v info_a">
+    <view class="ds-flex align-center line" wx:for="{{info.trade}}">
+      <view class="left">{{item.title}}</view>
+      <view class="right flex-1">{{item.value}}</view>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{ info.button.length != 0}}"></view>
+  <view class="ds-flex pack-center align-center button" wx:for="{{info.button}}" data-action="{{item.action}}" data-value="{{item.value}}" bindtap="ac_button">{{item.title}}</view>
+</view>
+<view class="ds-flex pack-center align-center payment_fade {{ show_payment_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ window.windowWidth }}px" catchtap="hide_fade">
+  <view class="ds-flex flex-v pack-between mode_window" style="width:{{ window.windowWidth-90 }}px;">
+    <view class="ds-flex flex-v top">
+      <view class="t">选择支付方式</view>
+    </view>
+    <view class="ds-flex flex-v">
+      <view class="ds-flex align-center pack-between way" wx:for="{{ payway }}" catchtap="choose_payway" data-payway="{{ item.value }}" data-index="{{ index }}">
+        <view class="ds-flex flex-1 inner_way align-center">
+          <image class="icon" src="{{ item.icon }}" style="width:27px;height:27px"></image>
+          <view class="ds-flex flex-v pack-center">
+            <view class="ds-flex pay_way_title">{{ item.title }}</view>
+            <view class="ds-flex pay_way_des" wx:if="{{ item.description }}">{{ item.description }}</view>
+          </view>
+        </view>
+        <view class="ds-flex pack-center align-center">
+          <image src="{{index == current_payment?'/image/payment/store_cur_30x30.png':'/image/details/store_30x30.png'}}" style="width:30rpx;height:30rpx"></image>
+        </view>
+      </view>
+    </view>
+    <view class="ds-flex bot">
+      <view class="ds-flex flex-1" data-usable="{{ payway[current_payment].is_usable }}" catchtap="payment_confirm">
+        <view class="ds-flex flex-1 pack-center align-center flex-1 confirm {{ payway[current_payment].is_usable == '1'?'':'gray' }}">确认支付</view>
+      </view>
+    </view>
+  </view>
+</view>

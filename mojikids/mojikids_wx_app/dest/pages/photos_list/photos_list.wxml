@@ -1,0 +1,12 @@
+<!--photos_list.wxml-->
+<view class="ds-flex flex-v pagemain photos-list pack-center " style="height:{{screen_height}}">
+  <view class="img-wrapper ds-flex flex-v pack-center align-center">
+    <image class="img {{show_img?'':'fn-hide'}}" src="{{img_url}}" bindload="img_loaded" binderror="img_error"  mode="scaleToFill" style="width:{{width}};height:{{height}}" ></image>
+  </view>
+  <view class="footer ds-flex flex-h">
+    <view class="btn ds-flex flex-h {{show_img ? 'confirm' : 'disabled'}} align-center" bindtap="download">
+      <image class="icon" src="http://image19-d.yueus.com/yueyue/20170522/20170522150136_160722_100001_38163.png?38x36_130"  ></image>
+      <view>保存原图</view>
+    </view>
+  </view>
+</view> 

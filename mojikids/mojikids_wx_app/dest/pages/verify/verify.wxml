@@ -1,0 +1,39 @@
+<!--pages/verify/verify.wxml-->
+<view class="ds-flex flex-v pack-between pagemain">
+    <view class="verify-page">
+        <view class="p1th">
+            <view class="wbox ">
+                <view class="lbox  cur">
+                    <view class="icon icon-1"></view>
+                    <view class="p1">验证身份</view>
+                </view>
+                <view class="rbox ">
+                    <view class="icon icon-2"></view>
+                    <view class="p1">绑定新号码</view>
+                </view>
+            </view>
+        </view>
+
+
+        <view class="p2th">
+            <view class="item-wrap">
+                <view class="item ui-border-b">
+                    <view class="f16 main-color numer"   bindtap="get_v_num" >{{code_btn_html}}</view>
+                    <input type="text"   name=" " id=" "  class="input-text" disabled="false" value="{{user_phone}}"  />
+                </view> 
+
+                <view class="item ui-border-b">
+                   <input type="text" name=" "  bindinput="bindKeyInput"  id=" " placeholder="请填写验证码" class="input-text" />
+                </view> 
+                
+            </view>     
+        </view>
+
+        <view class="btn">
+            <view   bindtap="save_profile"   class="{{disabled_css}} ui-button ui-button-block ui-button-100per ui-button-size-xl main-bg ui-button-radius-l"><span class="ui-button-content f16">验证</span></view>
+        </view>
+
+
+
+    </view>
+</view>

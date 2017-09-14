@@ -1,0 +1,83 @@
+<!--pages/coupon/coupon.wxml-->
+<view class="ds-flex flex-v pagemain {{empty?'fn-hide':''}}">
+  <view class="ds-flex pack-center align-center dont_use" bindtap="dont_use">不使用优惠券</view>
+  <view class="ds-flex flex-v card" wx:for="{{info.available}}" data-sn="{{ item.coupon_sn }}" style="width:{{window.windowWidth-30}}px" data-name="{{ item.name }}">
+    <image class="img" src="/image/coupon/coupon_bg_607x165.png" style="width:{{window.windowWidth-30}}px;height:{{(window.windowWidth-30)/607*165}}px"></image>
+    <view class="ds-flex top" style="height:{{(window.windowWidth-30)/607*165}}px">
+      <view class="ds-flex flex-v top_left">
+        <view class="price">{{item.price}}</view>
+        <view class="des">{{item.name}}</view>
+      </view>
+      <view class="ds-flex flex-v align-end top_right flex-1 " data-sn="{{ item.coupon_sn }}" data-name="{{ item.name }}" bindtap="choosen_coupon">
+        <image class="{{ choose_sn == item.coupon_sn?'':'fn-hide'}}" src="/image/coupon/coupon-select-44x44.png" style="width:44rpx;height:44rpx;padding:30rpx;"></image>
+      </view>
+    </view>
+    <view class="ds-flex bottom flex-1 ">
+      <view class="ds-flex flex-v flex-1">
+        <view class="ds-flex inn_des" wx:for="{{item.description}}" wx:for-index="idx" wx:for-item="iteminner">
+          <view class="des_title">{{iteminner.title}}</view>
+          <view class="ds-flex flex-1 {{item.cur?'in_cur':'des_value'}}">{{iteminner.value}}</view>
+        </view>
+      </view>
+      <view class="ds-flex pack-end align-center" style="padding-left:60rpx" bindtap="fvck_arrow" data-fidx="{{index}}" data-cidx="{{idx}}" data-ftype="available">
+        <view class="arrow">
+          <image class="{{item.cur?'fn-hide':''}}" src="/image/coupon/arrow_32x32.png" style="width:32rpx;height:32rpx"></image>
+          <image class="{{item.cur?'':'fn-hide'}}" src="/image/coupon/arrow_cur_32x32.png" style="width:32rpx;height:32rpx"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="ds-flex pack-center align-center cut {{info.forbidden.length==0?'fn-hide':''}}">——
+    <view style="margin:0 20rpx">以下优惠券此订单不适用</view>——</view>
+  <view class="ds-flex flex-v card_for" wx:for="{{info.forbidden}}" data-sn="{{ item.coupon_sn }}" data-name="{{ item.name }}">
+    <image class="img" src="/image/coupon/coupon_bg_for_607x165.png" style="width:100%;height:{{(window.windowWidth-30)/607*165}}px"></image>
+    <view class="ds-flex top" style="height:{{(window.windowWidth-30)/607*165}}px">
+      <view class="ds-flex flex-v top_left">
+        <view class="price">￥{{item.price}}</view>
+        <view class="des">{{item.name}}</view>
+      </view>
+      <view class="ds-flex flex-v top_right fn-hide"></view>
+    </view>
+    <view class="ds-flex bottom flex-1 ">
+      <view class="ds-flex flex-v flex-1">
+        <view class="ds-flex inn_des" wx:for="{{item.description}}" wx:for-index="idx" wx:for-item="iteminner">
+          <view class="des_title">{{iteminner.title}}</view>
+          <view class="ds-flex flex-1 {{item.cur?'in_cur':'des_value'}}">{{iteminner.value}}</view>
+        </view>
+      </view>
+      <view class="ds-flex pack-end align-center" style="padding-left:60rpx;position:relative; padding-right:30rpx;" bindtap="fvck_arrow" data-fidx="{{index}}" data-cidx="{{idx}}" data-ftype="forbidden">
+        <!--image wx:if="{{ item.is_used == '1' }}" src="/image/coupon/use_148x104.png" style="position:absolute;bottom:0;right:0;width:148rpx;height:104rpx;margin-right:12rpx;"></image>
+        <image wx:elif="{{ item.is_expire == '1' }}" src="/image/coupon/use_no_148x104.png" style="position:absolute;bottom:0;right:0;width:148rpx;height:104rpx;margin-right:12rpx;"></image>
+        <view wx:else></view-->
+        <view class="arrow">
+          <image class="{{item.cur?'fn-hide':''}}" src="/image/coupon/arrow_no_32x32.png" style="width:32rpx;height:32rpx"></image>
+          <image class="{{item.cur?'':'fn-hide'}}" src="/image/coupon/arrow_no_cur_32x32.png" style="width:32rpx;height:32rpx"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="ds-flex pack-center align-center notice_fade {{ show_notice_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ window.windowWidth }}px">
+  <view class="ds-flex flex-v pack-between mode_window" style="width:{{ windowWidth-90 }}px;">
+    <view class="ds-flex flex-v top">
+      <view class="t">使用须知</view>
+      <view class="des">您已是莫吉储值卡用户，若使用优惠券，将无法使用储值卡付款，请考虑清楚哟~</view>
+    </view>
+    <view class="ds-flex bot">
+      <view class="ds-flex pack-center align-center flex-1 cancel" bindtap="notice_cancel_fade">使用优惠券</view>
+      <view class="ds-flex flex-1" bindtap="dont_use">
+        <view class="ds-flex flex-1 pack-center align-center flex-1 confirm">使用储值卡</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class="ds-flex flex-v align-center pack-center empty {{empty?'':'fn-hide'}}" style="height:{{ window.windowHeight}}px">
+  <image src="/image/coupon/empty_200x200.png" style="width:200rpx;height:200rpx"></image>
+  <view class="notice">
+    <view>你暂无优惠券喲~</view>
+  </view>
+</view>

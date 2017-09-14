@@ -1,0 +1,107 @@
+<!--photos.wxml-->
+
+<view class="ds-flex flex-v pagemain fail-page pack-center align-center" hidden="{{hide_fail_page}}">
+  <view class="img-wrapper">
+    <image class="img" src=" http://image19-d.yueus.com/yueyue/20170523/20170523151501_637935_100001_38972.png?132x181_130" mode="aspectFit"></image>
+  </view>
+  <view class="flex-1 txt">
+  {{error_message}}
+  </view>
+  <view class="btn" bindtap="go_to_index">
+  去拍新照片
+  </view>
+</view>
+
+<view class="ds-flex flex-v pagemain success-page" hidden="{{hide_success_page}}">
+
+  <view class="top-tips ds-flex flex-v" hidden="{{hide_tips}}">
+    <view class="wrapper flex-1">
+      <view class="title">温馨提示：</view>
+      <view class="des ds-flex flex-h">
+        <view class="txt">{{description}}</view>
+      </view>
+      <view class="icon-wrapper">
+        <image mode="aspectFit" src="http://image19-d.yueus.com/yueyue/20170531/20170531145918_24561_100001_43058.png?120x120_130" class="icon"></image>
+      </view>
+      <view class="del ds-flex align-center pack-center" bindtap="close_tips">
+        <image src="/image/ui/icon-del-24x24.png" class="icon-del"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="ds-flex list flex-v">
+    <block wx:for="{{list}}" wx:for-item="item" wx:for-index="$index">
+      <view class="item" style="width:{{item.item_width}};height:{{item.item_height}};margin-left:{{item.margin_left}};margin-right:{{item.margin_right}};margin-bottom:{{item.margin_bottom}}">
+        <image src="{{item.url}}" ></image>
+        <view class="extend " bindtap="select_item" data-index="{{$index}}" data-img-url="{{item.url_v2}}">
+          <view class="fade-mix {{item.show_fade?'':'fn-hide'}}"></view>
+          <view class="circle ds-flex {{item.show_select?'':'fn-hide'}}">
+            <view class="num ds-flex pack-center align-center">{{item.num}}</view>
+          </view>
+          <view class="none {{item.show_circle?'':'fn-hide'}}">
+            <view class="big"></view>
+            <view class="mid"></view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="{{mode == 'view'?'':'fn-hide'}}">
+    <!--`两个按钮`可用 begin -->
+    <view class="ds-flex flex-h footer ">
+      <view class="btn confirm btn-wysq ds-flex flex-h align-center" bindtap="zzhb">
+        <image class="icon" src="http://image19-d.yueus.com/yueyue/20170517/20170517102417_806694_100001_35878.png?38x38_130"></image>
+        <view>制作海报</view>
+      </view>
+      <view class="line ds-flex flex-v">
+        <image class="icon" src="/image/photos/line-1x47.png"></image>
+      </view>
+      <view class="btn confirm btn-zzhb ds-flex flex-h align-center" bindtap="wysq">
+        <image class="icon" src="http://image19-d.yueus.com/yueyue/20170517/20170517102417_879722_100001_35879.png?38x38_130"></image>
+        <view>立即上墙</view>
+      </view>
+    </view>
+    <!--`两个按钮`可用  end -->
+  </view>
+  <view class="{{mode == 'zzhb'?'':'fn-hide'}}">
+    <!--`制作海报`可用 begin -->
+    <view class="ds-flex flex-h footer ">
+      <view class="btn cancel btn-wysq ds-flex flex-h" bindtap="cancel">
+        <view>取消</view>
+      </view>
+      <view class="btn btn-zzhb ds-flex flex-h {{ban_zzhb ? 'disabled':'confirm'}}" bindtap="zzhb">
+        <view>制作海报</view>
+      </view>
+    </view>
+    <!--`制作海报`可用  end -->
+  </view>
+  <view class="{{mode == 'wysq'?'':'fn-hide'}}">
+    <!--`我要上墙`可用 begin -->
+    <view class="ds-flex flex-h footer">
+      <view class="btn cancel btn-wysq ds-flex flex-h" bindtap="cancel">
+        <view>取消</view>
+      </view>
+      <view class="btn btn-wysq ds-flex flex-h {{ban_wysq ? 'disabled':'confirm'}}" bindtap="wysq">
+        <view>我要上墙</view>
+      </view>
+    </view>
+    <!--`我要上墙`可用  end -->
+  </view>
+
+  <view class="tys-wrapper ds-flex flex-h" hidden="{{hide_tys}}">
+    <view class="tys ds-flex flex-h" bindtap="select_tys" data-select="0">
+      <view class="cbk">
+        <image src="/image/photos/icon-check-30x30.png" class="icon" hidden="{{!selected_tys}}" id="cbk-select" data-select="1" ></image>
+        <view class="no-icon" hidden="{{selected_tys}}" ></view>
+      </view>
+      <view class="ds-flex flex-h">
+        <view class="txt ds-flex flex-h">
+          <view>阅读</view>
+          <view class="link" bindtap="go_xys" id="link">《肖像权使用授权书》</view>
+          <view>并同意</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

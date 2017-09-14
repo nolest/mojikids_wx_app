@@ -1,0 +1,41 @@
+
+page{
+    background: #fff;
+}
+
+
+.index-page{
+    .img{
+        box-shadow: 0 0 30rpx rgba(0,0,0,.3);
+        margin: 30rpx;
+        font-size: 0;
+        min-height: 300rpx;
+        img{
+            max-width: 100%
+        }
+
+    }
+
+    .txt{
+        text-align: center;
+        padding-top: 30rpx;
+    }
+
+    .go-btns{
+        margin-top:80rpx;
+        :first-child{
+          margin-left: 30rpx;
+        }
+
+        .go-to{
+            margin-right: 30rpx;
+            border:1rpx solid #ffc430;
+            color:#ffc430;
+            height:88rpx;
+            border-radius:50rpx;
+            margin-bottom:40rpx;
+            font-size: 32rpx;
+        }
+    }
+
+}

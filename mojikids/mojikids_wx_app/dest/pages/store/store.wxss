@@ -1,0 +1,41 @@
+/**store.wxss**/
+.pagemain {
+  background: #faf8f8; }
+  .pagemain .img_con {
+    font-size: 0; }
+  .pagemain .jump_con {
+    background: #fff;
+    margin-bottom: 10px; }
+    .pagemain .jump_con .to_shop {
+      color: #666666;
+      padding: 15px;
+      border-bottom: 1px solid #e6e6e6;
+      font-size: 14px; }
+      .pagemain .jump_con .to_shop .img_con {
+        font-size: 0;
+        width: 15px;
+        margin-right: 10px; }
+      .pagemain .jump_con .to_shop:last-child {
+        border-bottom: none; }
+      .pagemain .jump_con .to_shop .arrows {
+        font-size: 0; }
+  .pagemain .property {
+    background: #fff;
+    font-size: 14px;
+    padding: 15px 15px 0px 15px; }
+    .pagemain .property .line {
+      margin-bottom: 15px; }
+    .pagemain .property .left {
+      width: 75px;
+      color: #333333; }
+    .pagemain .property .right {
+      color: #666666; }
+  .pagemain .map_fade {
+    position: fixed;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.6); }
+    .pagemain .map_fade .pannel {
+      background: #fff;
+      border-radius: 4px 4px 0px 0px; }
+    .pagemain .map_fade .map_close {
+      padding: 15px; }

@@ -1,0 +1,64 @@
+.verify-page {
+  padding: 60rpx; }
+  .verify-page .p1th {
+    padding-top: 30rpx; }
+    .verify-page .p1th .wbox {
+      display: -webkit-box;
+      display: box;
+      -webkit-box-pack: justify;
+      box-pack: justify;
+      font-size: 28rpx;
+      color: #e6e6e6; }
+      .verify-page .p1th .wbox .icon {
+        width: 34rpx;
+        height: 50rpx;
+        display: block;
+        margin: 0 auto;
+        background-size: cover; }
+      .verify-page .p1th .wbox .p1 {
+        padding-top: 30rpx; }
+      .verify-page .p1th .wbox .lbox {
+        width: 50%;
+        text-align: center;
+        border-right: 1rpx dashed #e6e6e6;
+        height: 110rpx; }
+        .verify-page .p1th .wbox .lbox .icon-1 {
+          background-image: url(http://mojikids.yueus.com/static/wap/image/auth/icon-2-34x50-active.png); }
+      .verify-page .p1th .wbox .cur {
+        color: #999999; }
+      .verify-page .p1th .wbox .rbox {
+        width: 50%;
+        text-align: center;
+        height: 110rpx; }
+        .verify-page .p1th .wbox .rbox .icon-2 {
+          background-image: url(http://mojikids.yueus.com/static/wap/image/auth/icon-1-34x50-active.png); }
+  .verify-page .p2th {
+    padding-top: 80rpx; }
+    .verify-page .p2th .numer {
+      position: absolute;
+      right: 0;
+      top: 44rpx;
+      font-size: 28rpx;
+      z-index: 99;
+      padding: 10px 20px; }
+    .verify-page .p2th .item {
+      position: relative;
+      padding: 40rpx 0 40rpx 0; }
+      .verify-page .p2th .item .input-text {
+        width: 100%;
+        height: 48rpx;
+        font-size: 32rpx;
+        color: #666666; }
+      .verify-page .p2th .item:first-child {
+        border-bottom: 1rpx solid #ddd; }
+  .verify-page .btn {
+    padding-top: 40rpx; }
+    .verify-page .btn .ui-button {
+      border-radius: 60rpx;
+      line-height: 90rpx;
+      background-color: #ffc430;
+      display: block;
+      text-align: center;
+      color: #fff; }
+    .verify-page .btn .disabled {
+      background-color: #ccc !important; }

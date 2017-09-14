@@ -1,0 +1,56 @@
+/**store.wxss**/
+.pagemain{
+	background:#faf8f8;
+	.img_con{
+		font-size:0;
+	}
+	.jump_con{
+		background:#fff;
+		margin-bottom:10px;
+		.to_shop{
+			color:#666666;
+			padding:15px;
+			border-bottom:1px solid #e6e6e6;
+			font-size:14px;
+			.img_con{
+				font-size:0;
+				width:15px;
+				margin-right:10px;
+			}
+			&:last-child{
+				border-bottom:none;
+			}
+			.arrows{
+				font-size:0;
+			}
+		}
+	}
+	.property{
+		background:#fff;
+		font-size:14px;
+		padding:15px 15px 0px 15px;
+		.line{
+			margin-bottom:15px;
+		}
+		.left{
+			width:75px;
+			color:#333333;
+		}
+		.right{
+			color:#666666;
+		}
+	}
+	.map_fade{
+		position:fixed;
+		top:0px;
+		background:rgba(0,0,0,0.6);
+
+		.pannel{
+			background:#fff;
+			border-radius:4px 4px 0px 0px;
+		}
+		.map_close{
+			padding:15px
+		}
+	}
+}

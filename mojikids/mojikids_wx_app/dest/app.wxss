@@ -1,0 +1,113 @@
+/**app.wxss**/
+@import '/common/style/mobileBase.wxss';
+view{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+
+
+.main-color{color:#ffc430;}
+
+.color-555{color:#555;}
+.color-2c2{color:#2c2c2c;}
+.color-aaa{color:#aaa;}
+.color-111{color:#111;}
+.color-ff6{color:#ff6a6e;}
+.color-ffb{color:#ffb4b6;}
+.color-ddd{color:#ddd;}
+.color-000{color:#000;}
+.color-333{color:#333;}
+.color-666{color:#666;}
+.color-999{color:#999;}
+
+.color-fff{color:#fff;}
+.color-fe9{color:#fe9920;}
+.color-bbb{color:#bbb;}
+.color-777{color:#777;}
+.color-ffa{color:#ffac35;}
+.color-37a{color:#37aeec;}
+.color-6dc{color:#6dc91c;}
+.color-ff5{color:#ff5959;}
+.color-ccc{color:#ccc;}
+.color-ff9{color:#ff9600;}
+
+
+
+.main-bg{background-color: #ffc430;}
+.main_bg{background-color: #ffc430;}
+
+.main-border-color{
+    border-color: #ffc430 !important;
+}
+
+
+.re { position:relative; z-index:1 }
+.fr { float:right; }
+.fl { float:left; }
+.frdi { float:right; display:inline }
+.fldi { float:left;display:inline }
+.pt10 { padding-top:10rpx; }
+.pt20 { padding-top:20rpx; }
+.pt30 { padding-top:30rpx; }
+.pt40 { padding-top:40rpx; }
+.pb10 { padding-bottom:10rpx}
+.pb20 { padding-bottom:20rpx}
+.pb30 { padding-bottom:30rpx}
+.pb40 { padding-bottom:40rpx}
+.pl10 { padding-left:10rpx; }
+.pl20 { padding-left:20rpx; }
+.pl30 { padding-left:30rpx; }
+.pl40 { padding-left:40rpx; }
+.pr10 { padding-right:10rpx; }
+.pr20 { padding-right:20rpx; }
+.pr30 { padding-right:30rpx; }
+.pr40 { padding-right:40rpx; }
+.mt10 { margin-top:10rpx; }
+.mt20 { margin-top:20rpx; }
+.mt30 { margin-top:30rpx; }
+.mt40 { margin-top:40rpx; }
+.mb10 { margin-bottom:10rpx}
+.mb20 { margin-bottom:20rpx}
+.mb30 { margin-bottom:30rpx}
+.mb40 { margin-bottom:40rpx}
+.ml10 { margin-left:10rpx; }
+.ml20 { margin-left:20rpx; }
+.ml30 { margin-left:30rpx; }
+.ml40 { margin-left:40rpx; }
+.mr10 { margin-right:10rpx; }
+.mr20 { margin-right:20rpx; }
+.mr30 { margin-right:30rpx; }
+.mr40 { margin-right:40rpx; }
+.p10{padding:10rpx;}
+.p20{padding:20rpx;}
+.p30{padding:30rpx;}
+.p40{padding:40rpx;}
+
+
+.f20{font-size: 20rpx;}
+.f22{font-size: 22rpx;}
+.f24{font-size: 24rpx;}
+.f26{font-size: 26rpx;}
+.f28{font-size: 28rpx;}
+.f30{font-size: 30rpx;}
+.f32{font-size: 32rpx;}
+.f34{font-size: 34rpx;}
+.f36{font-size: 36rpx;}
+.f38{font-size: 38rpx;}
+.f40{font-size: 40rpx;}
+.f42{font-size: 42rpx;}
+.f44{font-size: 44rpx;}
+.f46{font-size: 46rpx;}
+.f48{font-size: 48rpx;}
+.f52{font-size: 52rpx;}
+.f56{font-size: 56rpx;}

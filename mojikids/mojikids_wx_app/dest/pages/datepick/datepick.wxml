@@ -1,0 +1,64 @@
+<!--pages/datepick/datepick.wxml-->
+<view class="ds-flex flex-v pagemain">
+
+    <view class="ds-flex flex-between head">
+        <view class="ds-flex align-center pack-center arrow_con" data-action="back" bindtap="fresh_days">
+            <image class="arrows" src="/image/ui/arrow-icon-32x32.png" style="width:16px;height:16px;transform: rotate(180deg);"/>
+        </view>
+        <view class="ds-flex flex-1 align-center pack-center title">{{display.year}}年{{display.month}}月</view>
+        <view class="ds-flex align-center pack-center arrow_con" data-action="front" bindtap="fresh_days">
+            <image class="arrows" src="/image/ui/arrow-icon-32x32.png" style="width:16px;height:16px;"/>
+        </view>
+    </view>
+    <view class="ds-flex pack-center align-center des_con">
+        <view>注：</view>
+        <view style="color:#cccccc">灰色</view>
+        <view>为已约满，</view>
+        <view class="yellow">黄色</view>
+        <view>为可预约喲~</view>
+    </view>
+    <view class="ds-flex date">
+        <view class="ds-flex flex-1 pack-center align-center" wx:for="{{ day }}">{{ item }}</view>
+    </view>
+    <view class="ds-flex wrap-wp">
+        <view class="ds-flex days {{ item.canbook==1?'y':'g' }} {{ item.date == date_pick_str && item.canbook ==1?'cur':''}}" style="width:{{ windowWidth/7}}px;height:{{ windowWidth/7}}px;" wx:for="{{ info.list }}" data-str="{{ item.date }}" data-distr="{{ item.show }}" data-zone="{{ item.timezone }}" data-canbook="{{ item.canbook }}" bindtap="tap_day">
+            <view class="ds-flex flex-1 align-center pack-center days_inner">{{item.day}}</view>
+        </view>
+    </view>
+    <view class="ds-flex zone_notice"><view>请选择时间点：</view><view class="damn_yellow {{ date_pick_zone.length>0?'fn-hide':''}}">（先选择日期）</view></view>
+    <view class="zone_con"> 
+        <view class="child {{zone_pick_index==index?'cur':''}}" wx:for="{{ date_pick_zone }}" data-index="{{index}}" data-title="{{ item.title }}" data-value="{{ item.value }}" data-stock="{{ item.stock_num }}" style="width:{{ (windowWidth-75-96)/4}}px" bindtap="zone_child">{{ item.title }}</view>
+    </view>
+    <view class="ds-flex pack-center align-center confirm_fade {{ show_confirm_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ windowWidth }}px">
+        <view class="ds-flex flex-v pack-between mode_window" style="width:{{ windowWidth-90 }}px;">
+            <view class="ds-flex flex-v top">
+                <view class="t">请确认你选择的档期：</view>
+                <view class="des" style="margin-bottom:3px">{{ date_pick_distr }}{{zone.title}}</view>
+                <view class="des">{{ store_name }}</view>
+            </view>
+            <view class="ds-flex bot">
+                <view class="ds-flex pack-center align-center flex-1 cancel" bindtap="cancel_fade">取消</view>
+                <view class="ds-flex flex-1" bindtap="confirm">
+                    <view class="ds-flex flex-1 pack-center align-center flex-1 confirm">确认</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="ds-flex pack-center align-center notice_fade {{ show_notice_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ windowWidth }}px">
+        <view class="ds-flex flex-v pack-between mode_window" style="width:{{ windowWidth-90 }}px;">
+            <view class="ds-flex flex-v top">
+                <view class="t">预约须知</view>
+                <view class="des">1、本店服务的小朋友年龄层为<view style="color:red;display:inline-block;">3-7岁</view>，如您的孩子不在此年龄范围内，请勿预约。</view>
+                <view class="des">2、预约成功后，如需取消请至少提前三天联系客服。</view>
+                <view class="des">3、改约次数只有1次哦，如需改约请联系客服，拍摄当天不可改约。</view>
+                <view class="des">4、如需联系微信小助手，请添加微信号 MOJIKIDS。</view>
+            </view>
+            <view class="ds-flex bot">
+                <view class="ds-flex pack-center align-center flex-1 cancel" bindtap="notice_cancel_fade">不再提示</view>
+                <view class="ds-flex flex-1" bindtap="notice_confirm">
+                    <view class="ds-flex flex-1 pack-center align-center flex-1 confirm">我知道了</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

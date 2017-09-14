@@ -1,0 +1,23 @@
+<!--pages/bb/bb.wxml-->
+
+<view class="ds-flex flex-v pagemain" hidden="{{hide_page}}">
+  <view id="page-container" class="page-container">
+    <view class="index-page">
+      <view class="img">
+        <image style="width: 100%;height:920rpx;" src="{{bb_img}}" bindload="img_load" binderror="img_error" mode="widthFix"></image>
+        <!-- <img data-role="max_img"  /> -->
+
+      </view>
+
+      <view class="normal">
+
+        <view class="ds-flex go-btns pack-between">
+          <view class="ds-flex pack-center align-center go-to flex-1" bindtap="go_url">去首页逛逛</view>
+          <view class="ds-flex pack-center align-center go-to flex-1" bindtap="download">保存图片</view>
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+</view>

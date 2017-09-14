@@ -1,0 +1,32 @@
+<!--pages/store/store.wxml-->
+<view class="ds-flex flex-v pagemain">
+<scroll-view scroll-y="true" style="height: {{window.windowHeight}}px;">
+    <view class="img_con">
+        <image src="{{ info.image }}" style="width:{{windowWidth}}px; height:210px" mode="aspectFill"/>
+    </view>
+    <view class="ds-flex flex-v jump_con">
+        <view class="ds-flex align-center to_shop" wx:for="{{ info.store }}" wx:for-item="inner" wx:for-index="$index" data-position="{{ inner.lng_lat }}" data-value="{{ inner.value }}" data-index="{{ $index }}" bindtap="to_shop">
+            <view class="ds-flex flex-1 align-center">
+                <view class="img_con">
+                    <image src="{{ inner.image }}" style="height:15px;width:15px"/>
+                </view>
+                <view class="text">{{ inner.value }}</view>
+            </view>
+            <view class="arrows">
+                <image class="{{$index==0?'fn-hide':''}}" src="/image/ui/arrow-icon-32x32.png" style="height:16px;width:16px"/>
+            </view>
+        </view>
+    </view>
+    <view class="ds-flex flex-v property">
+        <view class="ds-flex line" wx:for="{{ info.property }}">
+            <view class="left">{{ item.title }}</view>
+            <view class="flex-1 right">{{ item.value }}</view>
+        </view>
+    </view>
+    <view class="ds-flex flex-v pack-center map_fade {{ show_map?'':'fn-hide' }}" style="height:{{ window.windowHeight }}px;width:{{ windowWidth }}px">
+        <view class="ds-flex flex-1 pack-end map_close" bindtap="map_close"></view>
+        <map id="map" class="{{ show_map?'':'fn-hide' }}" longitude="{{ for_maps.longitude }}" latitude="{{ for_maps.latitude }}" include-points="{{for_maps.includePoints}}" scale="16" markers="{{ for_maps.markers }}" show-location style="width: 100%; height: 300px;"></map>
+        <view class="ds-flex flex-1 pack-end map_close" bindtap="map_close"></view>
+    </view>
+</scroll-view>
+</view>

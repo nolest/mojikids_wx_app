@@ -1,0 +1,42 @@
+<!--pages/success/success.wxml-->
+<view class="ds-flex flex-v pagemain">
+    <view class="ds-flex bar">
+        <view class="ds-flex flex-v pack-center flex-1">
+            <view class="pay">支付提交成功啦~</view>
+            <view class="ds-flex align-end pay_inner">
+                <view class="ds-flex flex-v pack-end"><view>实付金额</view></view>
+                <view class="ds-flex price">￥{{ info.price }}</view>
+            </view>
+        </view>
+        <image src="/image/success/pay-success-banner-264x176.png" mode="aspectFit" style="width:135px;height:90px;"/>
+    </view>
+    <view class="ds-flex fn-hide">
+        <view class="flex-1"></view>
+        <view class="ds-flex pack-enter align-center notice">
+            <view style="font-size:0;margin-right:5px;">
+                <image src="/image/success/icon-24x24.png" style="width:12px;height:12px;"/>
+            </view>
+            <view class="">关注“mojikids”公众号，获取订单动态提醒</view>
+        </view>
+        <view class="flex-1"></view>
+    </view>
+    <view class="ds-flex go_btns pack-between">
+      <view class="ds-flex pack-center align-center go_to flex-1" bindtap="go_to_order">查看订单列表</view>
+      <view class="ds-flex pack-center align-center go_to flex-1" bindtap="go_to_mine">完善宝宝档案</view>
+    </view>
+    <view class="ds-flex pack-center align-center go_to fn-hide" bindtap="go_to" style="width:{{windowWidth-60}}px">查看订单</view>
+    <view class="ds-flex flex-v detail">
+        <view class="ds-flex line align-center">
+            <view class="left">订单号：</view>
+            <view class="ds-flex flex-1 pack-end right">{{info.order_sn}}</view>
+        </view>
+        <view class="ds-flex line align-center">
+            <view class="left">商品信息：</view>
+            <view class="ds-flex flex-1 pack-end right">{{info.goods[0].title}}</view>
+        </view>
+        <view class="ds-flex line align-center">
+            <view class="left">下单时间：</view>
+            <view class="ds-flex flex-1 pack-end right">{{info.add_time}}</view>
+        </view>
+    </view>
+</view>

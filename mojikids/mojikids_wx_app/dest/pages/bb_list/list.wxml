@@ -1,0 +1,57 @@
+<view class="ds-flex flex-v pagemain">
+    <view id="page-container" class="page-container" >
+
+        <view class="index-page">
+
+            <view class="p1th">
+                <view class="item-wrap {{list_hidden}}" >
+  
+
+                    <view  class="item " wx:for="{{list}}"  >
+                        <view class="lbox">
+                            <view wx:if="{{item.baby_sex == '小王子'}}" class="icon-com icon-boy"></view>
+                            <view wx:else class="icon-com icon-girl"></view>
+                            <view class="ui-avatar-icon ui-avatar-icon-60">
+                                <image mode="aspectFit" style="background-image:url({{item.baby_image}})"></image>
+
+                            </view>
+                        </view>
+
+                        <view class="cbox">
+                            <view class="box1 color-333">{{item.baby_name}}</view>
+                            <view class="box2 color-666">{{item.baby_birth}}</view>
+                        </view>
+                        <view class="rbox">
+                            <view bindtap="edit_msg" id="{{item.baby_id}}" class="ui-button  ui-button-inline-block  ui-button-size-xx main-bg ui-button-radius-l">
+                                <span class="ui-button-content f12">修改</span>
+                            </view>
+    
+                        </view>
+                    </view> 
+                </view>  
+
+
+                <view class="{{no_data_hidden}} no-data">
+                    <image style=""  src="http://image19.yueus.com/yueyue/20170523/20170523151501_388572_100001_38971.png?132x185_130"></image>
+                    <view class="txt">你暂未添加宝宝档案呢~</view>
+                </view> 
+
+
+                <view class="btn {{btn_is_show}}">
+                    <view  bindtap="build_msg" class="ui-button ui-button-block ui-button-100per ui-button-size-xl  ui-button-radius-l ui-button-bd-fac main-border-color">
+                        <span class="ui-button-content f16">新建宝宝档案</span>
+                    </view>
+                </view>
+
+
+
+
+
+            </view>
+
+
+        </view>
+
+
+    </view> 
+</view>

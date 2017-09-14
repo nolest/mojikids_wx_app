@@ -1,0 +1,158 @@
+/**coupon.wxss**/
+.pagemain {
+  padding: 40rpx 15px; }
+  .pagemain .dont_use {
+    border: 1px solid #ffc430;
+    color: #ffc430;
+    height: 44px;
+    border-radius: 25px;
+    margin-bottom: 40rpx;
+    font-size: 32rpx; }
+  .pagemain .card {
+    box-shadow: 0px 0px 10px 3px rgba(127, 127, 127, 0.1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    min-height: 358rpx;
+    background: #ffb628;
+    color: #d2730c;
+    position: relative;
+    margin-bottom: 40rpx; }
+    .pagemain .card .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1; }
+    .pagemain .card .top {
+      position: relative;
+      top: 0;
+      z-index: 2; }
+      .pagemain .card .top .top_left {
+        padding-top: 30rpx;
+        padding-left: 44rpx; }
+        .pagemain .card .top .top_left .price {
+          color: #fff;
+          font-size: 72rpx; }
+        .pagemain .card .top .top_left .des {
+          font-size: 32rpx; }
+    .pagemain .card .bottom {
+      font-size: 24rpx;
+      padding: 30rpx 30rpx 30rpx 30rpx; }
+      .pagemain .card .bottom .inn_des {
+        margin-bottom: 16rpx; }
+        .pagemain .card .bottom .inn_des:last-child {
+          margin-bottom: 0px; }
+      .pagemain .card .bottom .des_title {
+        min-width: 120rpx;
+        word-break: break-all; }
+      .pagemain .card .bottom .des_value {
+        word-break: break-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical; }
+      .pagemain .card .bottom .in_cur {
+        word-break: break-all; }
+  .pagemain .cut {
+    margin-top: 12rpx;
+    font-size: 28rpx;
+    color: #dddddd;
+    margin-bottom: 40rpx; }
+  .pagemain .card_for {
+    box-shadow: 0px 0px 10px 3px rgba(127, 127, 127, 0.1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    min-height: 358rpx;
+    background: #e8e8e8;
+    color: #bbbbbb;
+    position: relative;
+    margin-bottom: 40rpx; }
+    .pagemain .card_for .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1; }
+    .pagemain .card_for .top {
+      position: relative;
+      top: 0;
+      z-index: 2; }
+      .pagemain .card_for .top .top_left {
+        padding-top: 30rpx;
+        padding-left: 44rpx; }
+        .pagemain .card_for .top .top_left .price {
+          color: #fff;
+          font-size: 72rpx; }
+        .pagemain .card_for .top .top_left .des {
+          font-size: 32rpx; }
+    .pagemain .card_for .bottom {
+      font-size: 24rpx;
+      padding: 30rpx 30rpx 30rpx 30rpx; }
+      .pagemain .card_for .bottom .inn_des {
+        margin-bottom: 16rpx; }
+        .pagemain .card_for .bottom .inn_des:last-child {
+          margin-bottom: 0px; }
+      .pagemain .card_for .bottom .des_title {
+        min-width: 120rpx;
+        word-break: break-all; }
+      .pagemain .card_for .bottom .des_value {
+        word-break: break-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical; }
+      .pagemain .card_for .bottom .in_cur {
+        word-break: break-all; }
+
+.notice_fade {
+  transition: background-color 0.4s,transform 0.2s;
+  transform: scale(0, 0);
+  background-color: transparent;
+  position: fixed;
+  top: 0px;
+  z-index: 2; }
+  .notice_fade.now {
+    transform: scale(1, 1);
+    background-color: rgba(0, 0, 0, 0.6); }
+  .notice_fade .pannel {
+    background: #fff;
+    border-radius: 4px 4px 0px 0px; }
+  .notice_fade .mode_window {
+    margin: 0px 45px;
+    background: #fff;
+    text-align: center;
+    border-radius: 4px;
+    overflow: hidden; }
+    .notice_fade .mode_window .top {
+      padding: 28px 17px; }
+      .notice_fade .mode_window .top .t {
+        margin-bottom: 6rpx;
+        font-size: 16px;
+        color: #333333; }
+      .notice_fade .mode_window .top .des {
+        word-break: break-all;
+        margin-top: 8px;
+        font-size: 13px;
+        color: #666666;
+        text-align: center; }
+    .notice_fade .mode_window .bot {
+      border-top: 1rpx solid #e6e6e6;
+      font-size: 14px;
+      height: 44px; }
+      .notice_fade .mode_window .bot .cancel {
+        color: #333333; }
+      .notice_fade .mode_window .bot .confirm {
+        color: #fff;
+        background: #ffc430; }
+
+.empty image {
+  margin-bottom: 26rpx; }
+
+.empty .notice {
+  font-size: 32rpx;
+  color: #aaaaaa;
+  margin-bottom: 20px; }

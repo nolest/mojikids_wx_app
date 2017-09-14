@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/verify/verify",
+    "pages/mine/mine",
+    "pages/bb_list/list",
+    "pages/order_list/order_list",
+    "pages/bb_file/file",
+    "pages/feedback/feedback",
+    "pages/bind_phone/bind_phone",
+    "pages/setting/setting",
+    "pages/profile_edit/profile_edit",
+    "pages/about/about",
+    "pages/details/details",
+    "pages/store/store",
+    "pages/confirm/confirm",
+    "pages/datepick/datepick",
+    "pages/success/success",
+    "pages/bind/bind",
+    "pages/logs/logs",
+    "pages/photos/photos",
+    "pages/bb/bb",
+    "pages/coupon/coupon",
+    "pages/invite/invite",
+    "pages/coupon_choose/coupon_choose",
+    "pages/photos_list/photos_list",
+    "pages/agree/agree",
+    "pages/order_detail/order_detail",
+    "pages/order_subsets/order_subsets",
+    "pages/storepick/storepick"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "MOJIKIDS儿童照相馆",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#ff9600",
+    "selectedColor": "#000",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/image/index/index-icon.png",
+        "selectedIconPath": "/image/index/index-icon-cur.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order_list/order_list",
+        "iconPath": "/image/index/order-icon.png",
+        "selectedIconPath": "/image/index/order-icon-cur.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "/image/index/mine-icon.png",
+        "selectedIconPath": "/image/index/mine-icon-cur.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

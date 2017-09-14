@@ -1,0 +1,63 @@
+<!--pages/coupon/coupon.wxml-->
+<view class="ds-flex flex-v pagemain {{empty?'fn-hide':''}}">
+  <view class="ds-flex flex-v card" wx:for="{{fetch_types[0].list}}" data-sn="{{ item.coupon_sn }}" style="width:{{window.windowWidth-30}}px">
+    <image class="img" src="/image/coupon/coupon_bg_607x165.png" style="width:{{window.windowWidth-30}}px;height:{{(window.windowWidth-30)/607*165}}px"></image>
+    <view class="ds-flex top" style="height:{{(window.windowWidth-30)/607*165}}px">
+      <view class="ds-flex flex-v top_left">
+        <view class="price">￥{{item.price}}</view>
+        <view class="des">{{item.name}}</view>
+      </view>
+      <view class="ds-flex flex-v top_right flex-1" wx:if="{{ from_confirm }}" data-sn="{{ item.coupon_sn }}" data-name="{{ item.name }}" bindtap="choosen_coupon"></view>
+    </view>
+    <view class="ds-flex bottom flex-1">
+      <view class="ds-flex flex-v flex-1">
+        <view class="ds-flex inn_des" wx:for="{{item.description}}" wx:for-index="idx" wx:for-item="iteminner">
+          <view class="des_title">{{iteminner.title}}</view>
+          <view class="ds-flex flex-1 {{item.cur?'in_cur':'des_value'}}">{{iteminner.value}}</view>
+        </view>
+      </view>
+      <view class="ds-flex pack-end align-center" style="padding-left:60rpx" bindtap="fvck_arrow" data-fidx="{{index}}" data-cidx="{{idx}}" data-ftype="{{0}}">
+        <view class="arrow">
+          <image class="{{item.cur?'fn-hide':''}}" src="/image/coupon/arrow_32x32.png" style="width:32rpx;height:32rpx"></image>
+          <image class="{{item.cur?'':'fn-hide'}}" src="/image/coupon/arrow_cur_32x32.png" style="width:32rpx;height:32rpx"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="ds-flex pack-center align-center cut {{fetch_types[1].list.length==0?'fn-hide':''}}">——
+    <view style="margin:0 20rpx">历史优惠券</view>——</view>
+  <view class="ds-flex flex-v card_for" wx:for="{{fetch_types[1].list}}" data-sn="{{ item.coupon_sn }}">
+    <image class="img" src="/image/coupon/coupon_bg_for_607x165.png" style="width:100%;height:{{(window.windowWidth-30)/607*165}}px"></image>
+    <view class="ds-flex top" style="height:{{(window.windowWidth-30)/607*165}}px">
+      <view class="ds-flex flex-v top_left">
+        <view class="price">￥{{item.price}}</view>
+        <view class="des">{{item.name}}</view>
+      </view>
+      <view class="ds-flex flex-v top_right fn-hide"></view>
+    </view>
+    <view class="ds-flex bottom flex-1 ">
+      <view class="ds-flex flex-v flex-1 in_k">
+        <view class="ds-flex inn_des" wx:for="{{item.description}}" wx:for-index="idx" wx:for-item="iteminner">
+          <view class="des_title">{{iteminner.title}}</view>
+          <view class="ds-flex flex-1 {{item.cur?'in_cur':'des_value'}}">{{iteminner.value}}</view>
+        </view>
+      </view>
+      <view class="ds-flex pack-end align-center" style="padding-left:60rpx;position:relative; padding-right:30rpx;" bindtap="fvck_arrow" data-fidx="{{index}}" data-cidx="{{idx}}" data-ftype="{{1}}">
+        <image wx:if="{{ item.is_used == '1' }}" src="/image/coupon/use_148x104.png" style="position:absolute;bottom:0;right:0;width:148rpx;height:104rpx;margin-right:12rpx;"></image>
+        <image wx:elif="{{ item.is_expire == '1' }}" src="/image/coupon/use_no_148x104.png" style="position:absolute;bottom:0;right:0;width:148rpx;height:104rpx;margin-right:12rpx;"></image>
+        <view wx:else></view>
+        <view class="arrow">
+          <image class="{{item.cur?'fn-hide':''}}" src="/image/coupon/arrow_no_32x32.png" style="width:32rpx;height:32rpx"></image>
+          <image class="{{item.cur?'':'fn-hide'}}" src="/image/coupon/arrow_no_cur_32x32.png" style="width:32rpx;height:32rpx"></image>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+<view class="ds-flex flex-v align-center pack-center empty {{empty?'':'fn-hide'}}" style="height:{{ window.windowHeight}}px">
+  <image src="/image/coupon/empty_200x200.png" style="width:200rpx;height:200rpx"></image>
+  <view class="notice">
+    <view>你暂无优惠券喲~</view>
+  </view>
+</view>

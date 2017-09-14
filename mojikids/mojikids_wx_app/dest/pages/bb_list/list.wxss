@@ -1,0 +1,87 @@
+/**index.wxss**/
+.index-page {
+  padding: 200px;
+  padding: 30rpx 36rpx; }
+  .index-page .dn {
+    display: none; }
+  .index-page .ui-avatar-icon image, .index-page .ui-avatar-icon span {
+    width: 120rpx;
+    height: 120rpx;
+    background-size: cover;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  .index-page .ui-avatar-icon-60 {
+    width: 1.2rpx;
+    height: 1.2rpx; }
+  .index-page .p1th {
+    padding-top: 10rpx; }
+    .index-page .p1th .item {
+      display: -webkit-box;
+      display: box;
+      -webkit-box-pack: justify;
+      box-pack: justify;
+      border-radius: 24rpx;
+      padding: 40rpx  30rpx  55rpx  30rpx;
+      box-shadow: 0px 0px 10px 3px rgba(127, 127, 127, 0.1);
+      margin-bottom: 40rpx; }
+      .index-page .p1th .item .lbox {
+        position: relative; }
+        .index-page .p1th .item .lbox .icon-com {
+          width: 54rpx;
+          height: 54rpx;
+          background-size: cover;
+          display: block;
+          position: absolute;
+          top: -20rpx;
+          left: 0; }
+        .index-page .p1th .item .lbox .icon-boy {
+          background-image: url(http://mojikids.yueus.com/static/wap/image/bb/list/boy-mark-54x54.png); }
+        .index-page .p1th .item .lbox .icon-girl {
+          background-image: url(http://mojikids.yueus.com/static/wap/image/bb/list/girl-mark-54x54.png); }
+        .index-page .p1th .item .lbox .ui-avatar-icon {
+          margin-left: 40rpx; }
+      .index-page .p1th .item .cbox {
+        -webkit-box-orient: block-axis;
+        text-align: center; }
+        .index-page .p1th .item .cbox .box1 {
+          font-size: 34rpx;
+          padding-top: 10rpx; }
+        .index-page .p1th .item .cbox .box2 {
+          padding-top: 20rpx;
+          font-size: 28rpx; }
+      .index-page .p1th .item .rbox {
+        padding-top: 36rpx; }
+        .index-page .p1th .item .rbox .ui-button {
+          line-height: 40rpx;
+          display: inline-block;
+          border-radius: 60rpx;
+          color: #fff;
+          background-color: #ffc430; }
+          .index-page .p1th .item .rbox .ui-button .ui-button-content {
+            padding: 0 20rpx;
+            font-size: 24rpx; }
+    .index-page .p1th .btn {
+      padding: 10rpx 20rpx 0 20rpx; }
+      .index-page .p1th .btn .ui-button {
+        line-height: 90rpx;
+        display: inline-block;
+        border-radius: 60rpx;
+        color: #ffc430;
+        border: 0.01rem solid #fac430;
+        width: 100%;
+        display: block;
+        text-align: center; }
+  .index-page .no-data {
+    text-align: center;
+    font-size: 30rpx;
+    color: #333;
+    padding-top: 90rpx; }
+    .index-page .no-data image {
+      margin: 0 auto;
+      width: 90rpx;
+      height: 130rpx;
+      margin: 0 auto; }
+    .index-page .no-data .txt {
+      padding-top: 30rpx;
+      padding-bottom: 100rpx; }

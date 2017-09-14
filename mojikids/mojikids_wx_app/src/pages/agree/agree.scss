@@ -1,0 +1,41 @@
+
+page{
+    background: #fff;
+}
+
+view{
+    line-height: 1.6;
+}
+.index-page{
+    .dn{
+        display:none
+    }
+
+    padding: 20rpx 20rpx  3rpx 20rpx;
+    font-size: 28rpx;
+    view
+    {
+        padding-bottom: 20rpx;
+    }
+    .fb{
+        font-weight: bold;
+    }
+
+    .foot_img{
+
+        width: 586rpx;
+        height:238rpx;
+
+        padding: 20rpx 0rpx 0 70rpx;
+
+        image{
+            width: 586rpx;
+            height:238rpx;
+        }
+    }
+
+    .wxParse-inline{
+        display: inline;
+    }
+}
+

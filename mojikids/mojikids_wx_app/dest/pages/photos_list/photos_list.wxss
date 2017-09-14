@@ -1,0 +1,29 @@
+.photos-list {
+  height: 100%;
+  background-color: #000; }
+  .photos-list .img-wrapper .img {
+    background-color: #fefefe; }
+  .photos-list .footer {
+    width: 100%;
+    height: 98rpx;
+    position: fixed;
+    bottom: 0; }
+    .photos-list .footer .btn {
+      width: 100%;
+      border: none;
+      border-radius: 0px;
+      font-size: 32rpx;
+      line-height: 98rpx;
+      text-align: center;
+      justify-content: center;
+      align-items: center; }
+      .photos-list .footer .btn .icon {
+        width: 38rpx;
+        height: 38rpx;
+        margin-right: 12rpx; }
+      .photos-list .footer .btn.confirm {
+        color: #fff;
+        background-color: #ffc430; }
+      .photos-list .footer .btn.disabled {
+        color: #fff;
+        background-color: #ccc; }

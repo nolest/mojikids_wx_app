@@ -1,0 +1,44 @@
+
+page{
+	background: #faf8f8;
+}
+.feedback-page{
+
+	textarea{
+		font-size: 28rpx;
+	}
+	.p1th{
+		.item-wrap{
+			.textarea-item{
+				padding:30rpx;
+				background-color: #fff;
+				.feedback-info{
+					width: 100%;
+					min-height: 300rpx;
+				}
+			}
+			.btn-item{
+				padding: 40rpx 60rpx;
+			}
+		}
+	}
+
+
+	.btn{
+	    padding: 40rpx;
+
+	    .ui-button{
+	        border-radius: 60rpx;
+	        line-height: 90rpx;
+	        background-color: #ffc430;
+	        display: block;
+	        text-align: center;
+	        color: #fff;
+	    }
+
+	    .disabled{
+	        background-color: #ccc !important;
+	    }
+
+	}
+}

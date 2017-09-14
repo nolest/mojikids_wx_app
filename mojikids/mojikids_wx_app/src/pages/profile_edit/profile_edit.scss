@@ -1,0 +1,118 @@
+
+page{
+    background: #faf8f8;
+}
+
+
+.profile-edit-page{
+
+
+
+    .user{
+        position: relative;
+        margin: 0 auto;
+        display: block;
+        background-size: cover;
+        position: relative;
+        border-radius: 50%;
+        width:160rpx;
+        height:160rpx;
+    }
+
+    .ui-avatar-icon{
+        // background-image: url(http://mojikids.yueus.com/static/wap/image/bb/file/user-img.png);
+        background-size: cover;
+        position: relative;
+        border-radius: 50%;
+        width:160rpx;
+        height:160rpx;
+    }
+    .icon-photo{
+        background-image: url(http://mojikids.yueus.com/static/wap/image/bb/file/icon-photo.png);
+        width: 44rpx;
+        height: 44rpx;
+        background-size: cover;
+        position: absolute;
+        bottom: 10rpx;
+        right: -10rpx;
+
+    }
+
+    .item-wrap{
+        .img-item{
+            background-color: #fff;
+            margin-bottom: 20rpx;
+            padding:70rpx 0 50rpx;
+            .ui-avatar-icon{
+                position: relative;
+                margin: 0 auto;
+                i{
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    // background-image: url(../../image/set_up/user-img-defalut.png);
+                }
+            }
+            .webuploader-pick{
+                width:160rpx;
+                height:160rpx;
+            }
+            .webuploader-element-invisible{
+                position: absolute !important;
+                clip: rect(0.01rem 0.01rem 0.01rem 0.01rem);
+            }
+            .txt{
+                padding-top: 20rpx;
+                text-align: center;
+                font-size: 28rpx;
+            }
+            .cammer-icon{
+                width: 44rpx;
+                height: 44rpx;
+                display:block;
+                position:absolute;
+                bottom:0;   
+                right:0;
+                // background: url(../../image/set_up/camera-icon-44x44.png?__inline) no-repeat center;
+                background-size: 100%;
+            }
+        }
+        .txt-item{
+            .item{
+                padding: 30rpx;
+                display:-webkit-box;
+                background-color: #fff;
+                font-size: 28rpx;
+                .title{
+                    margin-right: 30rpx;
+                    padding-top: 10rpx;
+                    
+                }
+                .info-con{
+                    .ui-title-info{
+                        width:100%;
+                    }
+                }
+            }
+        }
+
+        .ui-border-b{
+            border-bottom: 1rpx solid #f6f6f6;
+        }
+        .btn-item{
+            padding:80rpx 60rpx;
+        }
+
+        .ui-button{
+            height:90rpx;
+            border-radius: 60rpx;
+            background-color: #ffc430;
+            text-align: center;
+            color: #fff;
+            font-size: 32rpx;
+            line-height: 90rpx;
+        }
+
+    }
+}
+

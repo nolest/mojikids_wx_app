@@ -1,0 +1,75 @@
+<view class="ds-flex flex-v pagemain">
+
+    <view class="index-page">
+
+
+        <view class="p1th">
+            <view class="box1">
+                    
+                    <view class="user" id="upload-btn"  bindtap="fetch_upload"  style="background-image: url({{mr_img}});">
+                        <view class="ui-avatar-icon ui-avatar-icon-l" style="background-image: url({{user_img}});"> </view>
+                        <i class="icon-photo"></i>
+                    </view>
+
+                    <image src="{{upload_img_loading}}"  style="display:none" bindload="imageOnLoad"  binderror="imageOnLoadError" />
+
+
+
+                    <view class="box2 color-666">
+                        设置宝宝头像
+                    </view>
+            </view>
+        </view>
+
+
+        <view class="p2th">
+                <view class="item-wrap">
+                    <view class="item ui-border-b">
+                        <input  bindinput="bindKeyInput" type="text" name=" " id=" "  value="{{name}}" class="input-text color-999" placeholder="宝宝小名" />
+                    </view>
+
+                    <view class="item ui-border-b color-999">
+          
+                        <picker mode="date" value="{{date}}" start="2009-01-01" end="{{date_end}}" bindchange="bindDateChange">
+                            <view class="picker">
+                                {{date}}
+                            </view>
+                        </picker>
+
+                    </view>
+
+
+                </view>
+
+        </view>
+
+        <view class="p3th">
+
+            <radio-group class=" wbox"   bindchange="radioChange">
+                <view class="lbox" wx:for="{{items}}">
+                    <label class="{{item.cur}}"   >
+                        <view class="img"></view>
+                        <view >
+                            <view class="el-radio-input ">
+                                <label class="radio" >
+                                    <radio value="{{item.value}}" color="#ffc430" checked="{{item.checked}}"/>{{item.name}}
+                                </label>
+                            </view>
+                        
+                        </view>
+                    </label>
+                </view>
+            </radio-group>
+              
+        </view>
+
+        <view class="btn ">
+            <view   bindtap="save_data" class="{{btn_disabled}} ui-button ui-button-block ui-button-100per ui-button-size-xl main-bg ui-button-radius-l">
+                <span class="ui-button-content f16">保存并生成宝宝卡片</span>
+            </view>
+        </view>
+
+
+
+    </view>
+</view>

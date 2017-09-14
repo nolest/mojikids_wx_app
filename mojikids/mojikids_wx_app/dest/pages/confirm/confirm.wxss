@@ -1,0 +1,213 @@
+/**pages/confirm/confirm.wxml**/
+.pagemain {
+  background: #faf8f8; }
+  .pagemain .info {
+    background: #fff;
+    margin-bottom: 10px; }
+    .pagemain .info .line {
+      height: 44px;
+      font-size: 14px;
+      color: #333333;
+      padding: 0px 15px;
+      border-bottom: 1rpx solid #e6e6e6; }
+      .pagemain .info .line:last-child {
+        border-bottom: none; }
+      .pagemain .info .line .cou_right {
+        color: #cccccc; }
+        .pagemain .info .line .cou_right image {
+          margin-left: 6px; }
+      .pagemain .info .line .choosen {
+        color: #ffc430; }
+  .pagemain .info_f {
+    padding: 12px 0px;
+    background: #fff;
+    margin-bottom: 10px; }
+    .pagemain .info_f .line {
+      height: 28px;
+      font-size: 14px;
+      color: #333333;
+      padding: 0px 15px; }
+      .pagemain .info_f .line:last-child {
+        border-bottom: none; }
+      .pagemain .info_f .line .cou_right {
+        color: #cccccc; }
+        .pagemain .info_f .line .cou_right image {
+          margin-left: 6px; }
+      .pagemain .info_f .line .choosen {
+        color: #ffc430; }
+  .pagemain .info_x {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 14px 15px; }
+    .pagemain .info_x .line {
+      font-size: 14px; }
+      .pagemain .info_x .line:last-child {
+        border-bottom: none; }
+      .pagemain .info_x .line .cou_right {
+        color: #cccccc; }
+        .pagemain .info_x .line .cou_right image {
+          margin-left: 6px; }
+      .pagemain .info_x .line .choosen {
+        color: #ffc430; }
+    .pagemain .info_x .another_line {
+      margin-top: 8px; }
+  .pagemain .info_2 {
+    background: #fdfdfd;
+    padding: 12px 15px;
+    border-bottom: 1rpx solid #e6e6e6; }
+    .pagemain .info_2 .img_con {
+      font-size: 0; }
+    .pagemain .info_2 .descrip {
+      margin: 0px 10px; }
+      .pagemain .info_2 .descrip .t {
+        color: #4c4c4c;
+        font-size: 14px; }
+      .pagemain .info_2 .descrip .des {
+        margin-top: 15rpx;
+        color: #aaaaaa;
+        font-size: 12px; }
+    .pagemain .info_2 .price {
+      color: #666666;
+      font-size: 14px; }
+  .pagemain .info_3 {
+    background: #fff;
+    margin-bottom: 10px; }
+    .pagemain .info_3 .line {
+      height: 44px;
+      font-size: 14px;
+      padding: 0px 15px;
+      color: #666666;
+      border-bottom: 1rpx solid #e6e6e6; }
+      .pagemain .info_3 .line:last-child {
+        border-bottom: none; }
+        .pagemain .info_3 .line:last-child .left {
+          color: #333333;
+          font-size: 16px; }
+        .pagemain .info_3 .line:last-child .right {
+          color: #ffc430;
+          font-size: 16px;
+          font-weight: 600; }
+  .pagemain .info_4 {
+    background: #fff; }
+    .pagemain .info_4 .line {
+      height: 55px;
+      font-size: 14px;
+      padding: 0px 15px;
+      color: #666666;
+      border-bottom: 1rpx solid #e6e6e6; }
+      .pagemain .info_4 .line .t {
+        color: #333333; }
+      .pagemain .info_4 .line input {
+        color: #6f6f6f; }
+  .pagemain .text_a {
+    background: #fff;
+    padding: 0px 15px;
+    font-size: 14px;
+    color: #333333;
+    height: 45px; }
+  .pagemain .text_ab {
+    color: #6f6f6f;
+    background: #fff;
+    padding: 0px 15px 15px 15px;
+    margin-bottom: 20px;
+    font-size: 14px; }
+  .pagemain .next_btn_2 {
+    position: fixed;
+    bottom: 0px;
+    height: 50px;
+    z-index: 1000;
+    background: #ffc430;
+    color: #fff;
+    width: 100%; }
+  .pagemain .confirm_fade {
+    transition: background-color 0.4s,transform 0.2s;
+    transform: scale(0, 0);
+    background-color: transparent;
+    position: fixed;
+    top: 0px;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.6); }
+    .pagemain .confirm_fade.now {
+      transform: scale(1, 1);
+      background-color: rgba(0, 0, 0, 0.6); }
+    .pagemain .confirm_fade .pannel {
+      background: #fff;
+      border-radius: 4px 4px 0px 0px; }
+    .pagemain .confirm_fade .mode_window {
+      margin: 0px 45px;
+      background: #fff;
+      text-align: center;
+      border-radius: 4px;
+      overflow: hidden; }
+      .pagemain .confirm_fade .mode_window .top {
+        padding: 26px 0px; }
+        .pagemain .confirm_fade .mode_window .top .t {
+          font-size: 16px;
+          color: #333333; }
+        .pagemain .confirm_fade .mode_window .top .des {
+          margin-top: 8px;
+          font-size: 14px;
+          color: #666666; }
+      .pagemain .confirm_fade .mode_window .bot {
+        font-size: 14px;
+        height: 44px; }
+        .pagemain .confirm_fade .mode_window .bot .cancel {
+          color: #333333; }
+        .pagemain .confirm_fade .mode_window .bot .confirm {
+          color: #fff;
+          background: #ffc430; }
+
+.payment_fade {
+  transition: background-color 0.4s,transform 0.2s;
+  transform: scale(0, 0);
+  background-color: transparent;
+  position: fixed;
+  top: 0px;
+  z-index: 1001; }
+  .payment_fade.now {
+    transform: scale(1, 1);
+    background-color: rgba(0, 0, 0, 0.6); }
+  .payment_fade .pannel {
+    background: #fff;
+    border-radius: 4px 4px 0px 0px; }
+  .payment_fade .mode_window {
+    margin: 0px 45px;
+    background: #fff;
+    text-align: center;
+    border-radius: 4px;
+    overflow: hidden; }
+    .payment_fade .mode_window .top {
+      padding: 18px 15px; }
+      .payment_fade .mode_window .top .t {
+        font-size: 16px;
+        color: #333333; }
+      .payment_fade .mode_window .top .des {
+        word-break: break-all;
+        margin-top: 8px;
+        font-size: 14px;
+        color: #666666;
+        text-align: start; }
+    .payment_fade .mode_window .way {
+      padding: 0px 30rpx;
+      min-height: 110rpx;
+      border-top: 1rpx solid #eeeeee; }
+      .payment_fade .mode_window .way .inner_way .icon {
+        margin-right: 20rpx; }
+      .payment_fade .mode_window .way .inner_way .pay_way_title {
+        font-size: 28rpx;
+        color: #666666; }
+      .payment_fade .mode_window .way .inner_way .pay_way_des {
+        font-size: 22rpx;
+        color: #ffc430;
+        margin-top: 10rpx; }
+    .payment_fade .mode_window .bot {
+      font-size: 14px;
+      height: 45px; }
+      .payment_fade .mode_window .bot .cancel {
+        color: #333333; }
+      .payment_fade .mode_window .bot .confirm {
+        font-size: 16px;
+        color: #fff;
+        background: #ffc430; }
+      .payment_fade .mode_window .bot .gray {
+        background: #cccccc; }

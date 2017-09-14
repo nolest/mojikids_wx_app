@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="ds-flex flex-v pagemain">
+  <view class="ds-flex flex-v top_side" bindtap="jump_fade">
+    <swiper class="ds-flex" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#eeeef0" indicator-active-color="#ffd100" style="width:{{ window.windowWidth }}px;height:{{ window.windowWidth/750*320 }}px;">
+      <block wx:for="{{ info.banner }}">
+        <swiper-item>
+          <image src="{{ item.image }}" class="slide-image" mode="aspectFill" style="width:{{ window.windowWidth }}px;height:{{ window.windowWidth/750*320 }}px;" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="ds-flex pack-center location">
+      <view class="ds-flex inner pack-center {{loaded?'':'fn-hide'}}">
+        <image src="/image/index/address-icon-32x32.png" style="width:32rpx;height:32rpx;margin-right:6rpx;"></image>
+        <view class="ds-flex text" bindlongtap="ct_test">广州</view>
+      </view>
+    </view>
+  </view>
+  <view class="ds-flex flex-v list_side">
+    <view wx:for="{{info.goods}}" class="ds-flex flex-v cards" bindtap="go_to_details" data-goodsId="{{item.goods_id}}">
+      <view class="img-con">
+        <view wx:if="{{idx == '0'}}" class="ds-flex flex-v" wx:for="{{item.images}}" wx:for-index="idx" wx:for-item="iteminner">
+          <image src="{{iteminner.url}}" mode="aspectFit" style="width:{{window.windowWidth-50}}px;height:{{(window.windowWidth-50)/650*270}}px;margin-bottom:10rpx"></image>
+        </view>
+        <view class="ds-flex pack-between">
+          <view class="ds-flex" wx:if="{{idx != '0'}}" wx:for="{{item.images}}" wx:for-index="idx" wx:for-item="iteminner">
+            <image src="{{iteminner.url}}" mode="widthFix" style="display:inline-block;width:{{(window.windowWidth-60)/3}}px;height:{{(window.windowWidth-60)/3}}px;"></image>
+          </view>
+        </view>
+      </view>
+      <view class="ds-flex flex-v align-center cards_bot">
+        <view class="des">{{item.title}}</view>
+        <view class="price">{{item.price}}</view>
+        <image src="/image/index/card_bg_690x150.png" style="width:100%;height:100%;position:absolute;top:0px"></image>
+      </view>
+    </view>
+  </view>
+  <view class="ds-flex pack-center align-center more_text {{loaded?'':'fn-hide'}}">更多套餐，敬请期待~</view>
+</view>
+
+<view class="ds-flex pack-end jump_fade {{ jump_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:100%;padding-top:30px;z-index:300;" bindtap="close_jump">
+  <image src="{{info.notice}}" style="width:600rpx;height:{{600*625/375}}rpx;margin-right:20px;"></image>
+</view>

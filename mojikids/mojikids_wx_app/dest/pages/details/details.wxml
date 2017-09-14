@@ -1,0 +1,155 @@
+<!--pages/details.wxml-->
+<import src="../../utils/wxParse/wxParse.wxml" />
+<view class="ds-flex flex-v pagemain">
+  <scroll-view scroll-y="true" style="height: {{window.windowHeight-50}}px;">
+    <!--swiper class="ds-flex" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:{{ windowWidth }}px;">
+        <block wx:for="{{ info.cover }}">
+            <swiper-item>
+                <image src="{{ item.value }}" class="slide-image" mode="aspectFill" style="height:{{ windowWidth }}px;width:{{ windowWidth }}px"/>
+            </swiper-item>
+        </block>
+    </swiper-->
+    <view class="" style="font-size:0">
+      <image src="{{ info.cover[1].value }}" class="slide-image" mode="aspectFill" style="height:{{ windowWidth }}px;width:{{ windowWidth }}px" />
+    </view>
+
+    <view class="ds-flex flex-v title_con">
+      <view class="ds-flex pack-center title">{{ info.title }}</view>
+      <view class="ds-flex pack-center title_info">
+        <view class="price">{{ info.price }}</view>
+        <view class="unit">{{ info.unit }}</view>
+      </view>
+    </view>
+    <view class="ds-flex stores pack-between align-center" bindtap="choose_store">
+      <view class="ds-flex align-center">
+        <view class="stores_t">可选门店</view>
+        <view class="ds-flex pack-center align-center stores_n">{{info.store.length}}</view>
+      </view>
+      <view class="stores_m">更换</view>
+    </view>
+    <view>
+      <view class="ds-flex flex-v jump_con" wx:for="{{ info.store }}" wx:if="{{ index == current_store}}">
+        <view class="ds-flex align-center to_shop" wx:for="{{ item.property }}" wx:for-item="inner" wx:for-index="$index" data-position="{{ inner.lng_lat }}" data-value="{{ inner.value }}" data-index="{{ $index }}" bindtap="to_shop">
+          <block wx:if="{{$index==0}}">
+            <view class="ds-flex flex-1" data-storeid="{{ item.store_id }}" bindtap="nav_shop">
+              <view class="ds-flex flex-1 align-center">
+                <view class="img_con">
+                  <image src="{{ inner.image }}" style="height:15px;width:15px" />
+                </view>
+                <view class="text">{{ inner.value }}</view>
+              </view>
+              <view class="arrows">
+                <image src="/image/ui/arrow-icon-32x32.png" style="height:16px;width:16px" />
+              </view>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="ds-flex flex-1 align-center">
+              <view class="img_con">
+                <image src="{{ inner.image }}" style="height:15px;width:15px" />
+              </view>
+              <view class="text">{{ inner.value }}</view>
+            </view>
+            <view class="arrows">
+              <image src="/image/ui/arrow-icon-32x32.png" style="height:16px;width:16px" />
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="ds-flex flex-v datail_body">
+        <view class="ds-flex taps">
+          <view class="ds-flex flex-1 pack-center align-center {{ body_taps_index==index?'cur':'normal' }} taps_btn" wx:for="{{ body_taps }}" data-index="{{ index }}" bindtap="detail_body_taps">{{ item }}</view>
+        </view>
+        <view class="ds-flex flex-v detail_main_1 {{ body_taps_index==0?'':'fn-hide' }}">
+          <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+        <view class="ds-flex flex-v detail_main_2 {{ body_taps_index==1?'':'fn-hide' }}">
+          <view class="ds-flex flex-v packages" wx:for="{{ info.package }}">
+            <view class="ds-flex pack-between align-center head">
+              <view class="title">{{ item.name }}</view>
+              <view class="price">{{ item.price }}</view>
+            </view>
+            <view class="ds-flex flex-v body">
+              <view class="ds-flex line" wx:for="{{ item.package }}" wx:for-item="inner">
+                <view class="left">{{ inner.title }}</view>
+                <view class="flex-1 right">{{ inner.value }}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="ds-flex addon {{ info.addon.length?'':'fn-hide' }}">
+        <view class="ds-flex flex-v flex-1 con">
+          <view class="addon_title">加修加印说明</view>
+          <view class="ds-flex addon_ad pack-between" wx:for="{{ info.addon }}">
+            <view style="color:#666666">{{ item.title }}</view>
+            <view style="color:#ffc430">{{ item.value }}</view>
+          </view>
+        </view>
+      </view>
+      <view class="addon_empty" style="height:40rpx"></view>
+    </view>
+  </scroll-view>
+  <view class="ds-flex align-center pack-center next_btn" bindtap="next_btn">{{ next_btn }}</view>
+  <view class="ds-flex flex-v fade {{ step==1?'':'fn-hide'}}" style="position:fixed;top:0px;background:rgba(0,0,0,0.6);height:{{ window.windowHeight }}px;width:{{ windowWidth }}px">
+    <view class="ds-flex flex-1 return" bindtap="close_fade"></view>
+    <view class="ds-flex flex-v pannel" style="width:{{ window.windowWidth }}px;background:#fff">
+      <view class="ds-flex flex-v top">
+        <view class="ds-flex pack-between align-center pannel_title">
+          <view class="price">{{ info.standard[standard_pick].price }}</view>
+          <view class="close" bindtap="close_fade">
+            <image src="../../image/details/close-btn-44x44.png" style="width:22px;height:22px;" />
+          </view>
+        </view>
+        <view class="ds-flex standard_text">{{ standard_text }}</view>
+        <view class="ds-flex standard_con wrap-wp">
+          <view class="standard_btn {{ standard_pick==$index?'cur':'normal' }}" wx:for="{{ info.standard }}" wx:for-index="$index" bindtap="standard_btn" data-index="{{ $index }}" data-standard="{{ item.standard_id }}">{{ item.name }}</view>
+        </view>
+      </view>
+      <view class="ds-flex bot wrap-wp">
+        <view class="ds-flex flex-v standard_per" wx:for="{{ info.standard[standard_pick].property }}">
+          <view class="ds-flex pack-center align-center in_height">
+            <view class="value {{ item.image?'fn-hide':'' }}">{{ item.value }}</view>
+            <view class="unit {{ item.image?'fn-hide':'' }}">{{ item.unit }}</view>
+            <image class="{{ item.image?'':'fn-hide' }}" src="{{ item.image }}" style="width:27px;height:17px;" />
+          </view>
+          <view class="ds-flex pack-center tis">{{ item.title }}</view>
+        </view>
+      </view>
+      <block wx:if="{{ account_type != 3 }}">
+        <navigator class="ds-flex flex-1" url="/pages/bind/bind" hover-class="none" open-type="navigate">
+          <view class="ds-flex align-center pack-center next_btn_2">{{ next_btn_2 }}</view>
+        </navigator>
+      </block>
+      <block wx:else>
+        <navigator class="ds-flex flex-1" url="/pages/storepick/storepick?schedule_id={{schedule_id}}&goods_id={{goods_id}}&standard_id={{standard_id_pick}}&store_name={{store_name_str}}&store_id={{store_id}}&from_page=details" hover-class="none" open-type="navigate">
+          <view class="ds-flex align-center pack-center next_btn_2" bindtap="next_btn_2">{{ next_btn_2 }}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <!--view class="ds-flex flex-v pack-center map_fade {{ show_map?'':'fn-hide' }}" style="height:{{ window.windowHeight }}px;width:{{ windowWidth }}px">
+    <view class="ds-flex flex-1 pack-end map_close" bindtap="map_close"></view>
+    <map id="map" class="{{ show_map?'':'fn-hide' }}" longitude="{{ for_maps.longitude }}" latitude="{{ for_maps.latitude }}" include-points="{{for_maps.includePoints}}" scale="16" markers="{{ for_maps.markers }}" show-location style="width: 100%; height: 300px;"></map>
+    <view class="ds-flex flex-1 pack-end map_close" bindtap="map_close"></view>
+  </view-->
+  <view class="ds-flex flex-v {{ show_store?'now':'' }} store_fade" style="height:100%;width:{{ windowWidth }}px;position:fixed;top:0px;background:#faf8f8;">
+    <view class="ds-flex align-center loc">
+      <view>广州</view>
+    </view>
+    <view class="ds-flex store_line" wx:for="{{info.store}}" bindtap="choose_store_in_fade" data-storeIndex="{{ index }}" data-scheduleId="{{ item.schedule_id}}" data-storeId="{{item.store_id}}" data-storeNameStr="{{item.property[0].value}}">
+      <view class="ds-flex flex-v flex-1 in_store">
+        <view class="ds-flex {{ idx == '0'?'first':'no_first'}}" wx:for="{{item.property}}" wx:for-index="idx" wx:for-item="iteminner">
+          <view class="font-size:0;padding-top:0px;">
+            <image class="{{ idx == '0'?'fn-hide':''}}" src="{{iteminner.image}}" style="width:30rpx;height:30rpx;margin-right:20rpx;"></image>
+          </view>
+
+          <view class="ds-flex align-start flex-1 des">{{iteminner.value}}</view>
+        </view>
+      </view>
+      <view class="ds-flex pack-center align-center store_icon">
+        <image src="{{index == current_store?'/image/details/store_cur_30x30.png':'/image/details/store_30x30.png'}}" style="width:30rpx;height:30rpx"></image>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+<!--pages/bind/bind.wxml-->
+<view class="ds-flex flex-v pack-between pagemain" style="height:{{window.windowHeight}}px;width:{{window.windowWidth}}px">
+    <view class="ds-flex flex-v">
+        <view class="ds-flex flex-v con">
+            <view class="ds-flex align-center pack-between">
+                <input class="flex-1" placeholder="请填写手机号码" focus type="number" bindinput="bindPhoneInput" maxlength="11"/>
+                <view class="get_code" bindtap="get_code">{{ code_str }}</view>
+            </view>
+        </view>
+        <view class="ds-flex flex-v con">
+            <view class="ds-flex align-center pack-between sec">
+                <input placeholder="请填写验证码" type="number" bindinput="bindCodeInput" maxlength="6"/>
+            </view>
+        </view>
+        <view class="ds-flex pack-center align-center btn {{ check?'cur':'normal'}}" bindtap="confirm_bind">
+            确 认
+        </view>
+    </view>
+    <view class="ds-flex pack-center pics">
+        <image src="/image/bind/auth-foot-img-586x238.png" style="width:293px;height:119px" mode="aspectFit"/>
+    </view>
+    <view class="ds-flex pack-center align-center confirm_fade {{ show_confirm_fade?'now':'' }}" style="height:{{ window.windowHeight }}px;width:{{ window.windowWidth }}px">
+        <view class="ds-flex flex-v pack-between mode_window" style="width:{{ windowWidth-90 }}px;">
+            <view class="ds-flex flex-v top">
+                <view class="t">{{fade_title}}</view>
+                <view class="des">{{fade_message}}</view>
+            </view>
+            <view class="ds-flex bot">
+                <view class="ds-flex flex-1 pack-center align-center flex-1 confirm" bindtap="cancel_fade">确认</view>
+            </view>
+        </view>
+    </view>
+</view>

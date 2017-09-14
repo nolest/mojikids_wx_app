@@ -1,0 +1,80 @@
+/* pages/bind/bind.wxss */
+.pagemain{
+	height:100%;
+	background:#ffffff;
+	.con{
+		margin:15px 30px 0px 30px;
+		padding-bottom:5px;
+		border-bottom:1px solid #e6e6e6;
+		.get_code{
+			color:#ffc430;
+			font-size:16px;
+			margin:10px 0px;
+		}
+		.sec{
+			padding:10px 0px;
+		}
+	}
+	.btn{
+		height:45px;
+		border-radius:24px;
+		margin:20px 30px;
+		color:#fff;
+		&.normal{
+			background:#cccccc;
+		}
+		&.cur{
+			background:#ffc430;
+		}
+	}
+	.pics{
+
+	}
+	.confirm_fade{
+		&.now{
+			transform : scale(1,1);
+			background-color:rgba(0,0,0,0.6);
+		}
+		transition:background-color 0.4s,transform 0.2s;
+		transform : scale(0,0);
+		background-color:rgba(0,0,0,0); 
+		position:fixed;
+		top:0px;
+		z-index:10000;
+		background:rgba(0,0,0,0.6);
+		.pannel{
+			background:#fff;
+			border-radius:4px 4px 0px 0px;
+		}
+		.mode_window{
+			margin:0px 45px;
+			background:#fff;
+			text-align:center;
+			border-radius:4px;
+			overflow:hidden;
+			.top{
+				padding:26px 0px;
+				.t{
+					font-size:16px;
+					color:#333333;
+				}
+				.des{
+					margin-top:8px;
+					font-size:14px;
+					color:#666666;
+				}
+			}
+			.bot{
+				font-size:14px;
+				height:44px;
+				.cancel{
+					color:#333333;
+				}
+				.confirm{
+					color:#fff;
+					background:#ffc430;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+page {
+  background-color: #faf8f8; }
+
+.set-up-index-page {
+  font-size: 28rpx; }
+  .set-up-index-page .item-wrap .ui-edit-user-info-mod {
+    border-bottom: 1rpx solid #e6e6e6; }
+    .set-up-index-page .item-wrap .ui-edit-user-info-mod .user-info-item {
+      background: #fff;
+      display: -webkit-box;
+      display: box;
+      -webkit-box-pack: justify;
+      box-pack: justify;
+      padding: 28rpx 30rpx; }
+    .set-up-index-page .item-wrap .ui-edit-user-info-mod:last-child {
+      border: none; }
+  .set-up-index-page .item-wrap .icon-allow-grey {
+    background: url(http://image19.yueus.com/yueyue/20170524/20170524103542_203423_100001_39609.png?32x32_130) no-repeat;
+    width: 32rpx;
+    height: 32rpx;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle; }

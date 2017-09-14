@@ -1,0 +1,70 @@
+<!--pages/order_list/order_list.wxml-->
+<view class="ds-flex flex-v pack-between pagemain">
+  <view class="ds-flex bar">
+    <view class="ds-flex align-center pack-center bar_inner {{taps_index == index?'cur':''}}" wx:for="{{taps}}" bindtap="change_tap" data-index="{{index}}">
+      <view class="ds-flex align-center align-self-stretch tap_item " data-types="{{item.types}}">{{ item.text }}</view>
+    </view>
+  </view>
+  <view class="order_list_inner">
+    <view class="ds-flex fake_margin"></view>
+    <view class="ds-flex flex-v align-center pack-center empty {{ show_empty?'' : 'fn-hide'}}" style="height:{{ window.windowHeight-66}}px">
+      <image src="/image/order_list/all_no_200x200.png" style="width:200rpx;height:200rpx"></image>
+      <view class="notice">
+        <view>你还没有相关的订单哦~</view>
+      </view>
+    </view>
+    <view class="ds-flex flex-v child" wx:for="{{ order_list }}" bindtap="go_to_detail" data-sn="{{ item.order_sn }}">
+      <view class="ds-flex pack-between order_title">
+        <view>{{ item.title }}</view>
+        <view style="color:#ffc430">{{ item.status_str }}</view>
+      </view>
+      <view class="order_body">
+        <view class="ds-flex body_inner" wx:for="{{ item.property }}" wx:for-item="inner">
+          <view class="ds-flex left">{{ inner.title }}</view>
+          <view class="ds-flex flex-1 right">{{ inner.value }}</view>
+        </view>
+      </view>
+      <view class="ds-flex align-center pack-end order_price" wx:for="{{ item.bill }}" wx:for-item="inner">
+        <view class="ds-flex price_inner">
+          <view class="left">{{ inner.title }}</view>
+          <view class="right">{{ inner.value }}</view>
+        </view>
+      </view>
+      <view class="ds-flex pack-between align-center order_pay">
+        <view class="stasus fn-hide"> {{ item.status_desc }}</view>
+        <view class="fn-hide" wx:if="{{ item.lng_lat }}" data-value="{{ item.lng_lat }}" catchtap="open_map" style="font-size:0;">
+          <image src="../../image/order_list/map_54x54.png" style="width:27px;height:27px;"></image>
+        </view>
+        <view class="ds-flex pack-end flex-1">
+          <view class="btn" wx:for="{{ item.button }}" wx:for-item="inner" data-value="{{ inner.value }}" data-action="{{ inner.action }}" catchtap="taps_btn" data-orderSn="{{item.order_sn}}" data-goodsId="{{ item.goods_id }}" data-payway="{{ item.pay_way }}">{{ inner.title }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="ds-flex pack-center align-center payment_fade {{ show_payment_fade?'now':'' }}" style="height:100%;width:{{ window.windowWidth }}px" catchtap="hide_fade">
+  <view class="ds-flex flex-v pack-between mode_window" style="width:{{ window.windowWidth-90 }}px;">
+    <view class="ds-flex flex-v top">
+      <view class="t">选择支付方式</view>
+    </view>
+    <view class="ds-flex flex-v">
+      <view class="ds-flex align-center pack-between way" wx:for="{{ payway }}" catchtap="choose_payway" data-payway="{{ item.value }}" data-index="{{ index }}">
+        <view class="ds-flex flex-1 inner_way align-center">
+          <image class="icon" src="{{ item.icon }}" style="width:27px;height:27px"></image>
+          <view class="ds-flex flex-v pack-center">
+            <view class="ds-flex pay_way_title">{{ item.title }}</view>
+            <view class="ds-flex pay_way_des" wx:if="{{ item.description }}">{{ item.description }}</view>
+          </view>
+        </view>
+        <view class="ds-flex pack-center align-center">
+          <image src="{{index == current_payment?'/image/payment/store_cur_30x30.png':'/image/details/store_30x30.png'}}" style="width:30rpx;height:30rpx"></image>
+        </view>
+      </view>
+    </view>
+    <view class="ds-flex bot">
+      <view class="ds-flex flex-1" data-usable="{{ payway[current_payment].is_usable }}" catchtap="payment_confirm">
+        <view class="ds-flex flex-1 pack-center align-center flex-1 confirm {{ payway[current_payment].is_usable == '1'?'':'gray' }}">确认支付</view>
+      </view>
+    </view>
+  </view>
+</view>

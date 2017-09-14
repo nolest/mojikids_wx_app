@@ -1,0 +1,60 @@
+/* pages/success/success.wxss */
+.pagemain{
+	background:#fff;
+	.bar{
+		padding:10px 10px 10px 30px;
+		height:90px;
+		background:#ffc430;
+		color:#fff;
+		.pay{
+			font-size:21px;
+			font-weight:600;
+		}
+		.pay_inner{
+			height:24px;
+			line-height:18px;
+			font-size:10px;
+			.price{
+				font-size:18px;
+			}
+		}
+	}
+	.notice{
+		padding:0px 10px;
+		height:30px;
+		margin:15px 0px 20px 0px;
+		background:#fff8e5;
+		border-radius:4px;
+		font-size:12px;
+		color:#ffc73b;
+	}
+  .go_btns{
+    margin-top:30rpx;
+    :first-child{
+      margin-left: 30rpx;
+    }
+  }
+	.go_to{
+      margin-right: 30rpx;
+		border:1px solid #ffc430;
+		color:#ffc430;
+		height:44px;
+		border-radius:25px;
+		margin-bottom:20px;
+        font-size: 32rpx;
+	}
+	.detail{
+		font-size:14px;
+		.line{
+			padding:14px 15px;
+			border-bottom:1px solid #e6e6e6;
+			.left{
+				color:#333333;
+			}
+			.right{
+				word-break: break-all;
+				color:#666666; 
+			}
+		}
+	}
+}
